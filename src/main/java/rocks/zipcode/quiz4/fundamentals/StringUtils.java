@@ -67,20 +67,21 @@ public class StringUtils {
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        String[] stringArray = str.split("");
 
+        String[] stringArray = str.split("");
         String prev = stringArray[0];
         String answer = stringArray[0];
 
-        for(int i =1; i < stringArray.length; i++){
-            if(!stringArray[i].equals(prev)){
-                answer+=stringArray[i];
-                prev = stringArray[i];
-            } else {
-                prev = stringArray[i];
+        for (int i = 1; i < stringArray.length - 1; i++) {
+            if (!stringArray[i].equals(stringArray[i - 1]) && !stringArray[i].equals(stringArray[i + 1])) {
+                answer += stringArray[i];
             }
         }
-        return answer;
+
+//        if(answer.substring(answer.length()-2) != stringArray[stringArray.length-1]){
+//            answer+=stringArray[stringArray.length-1];
+//        }
+        return answer+stringArray[stringArray.length-1];
     }
 
     public static String invertCasing(String str) {
