@@ -61,26 +61,30 @@ public class StringUtils {
         for(int i = 0; i < str.length();){
             char character = str.charAt(i);
             int j = i+ 1;
-            for( ; j < str.length();j++){
+            for( ; j < str.length();){
                 if(str.charAt(j) == character){
                     j++;
                 }
                 else
                     break;
             }
-            if(j == i + 1)
+            if(j == i + 1) {
                 result += String.valueOf(character);
+            }
             i = j;
         }
-//        if(str.charAt(str.length() - 2) != str.charAt(str.length() - 1))
-//        {
-//            result += String.valueOf(str.charAt(str.length() - 1));
-//        }
         return result;
 
     }
 
     public static String invertCasing(String str) {
-        return null;
+        String result = "";
+        for(int i = 0; i < str.length(); i++){
+            char ch = str.charAt(i);
+            result += Character.isLowerCase(ch) ?
+                String.valueOf(Character.toUpperCase(ch)) :
+                    String.valueOf(Character.toLowerCase(ch));
+        }
+        return result;
     }
 }
