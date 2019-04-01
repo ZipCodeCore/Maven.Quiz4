@@ -46,8 +46,10 @@ public class WithdrawalNegativeTest {
         // when
         transactable.withdrawal(withdrawalAmount);
         Double actual = transactable.getBalance();
-
+        System.out.println(expected);
+        System.out.println(actual);
         // then
         Assert.assertEquals(expected, actual);
+
     }
 }
