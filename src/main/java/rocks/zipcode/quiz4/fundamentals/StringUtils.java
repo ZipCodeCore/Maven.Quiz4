@@ -1,9 +1,5 @@
 package rocks.zipcode.quiz4.fundamentals;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 /**
  * @author leon on 21/12/2018.
  */
