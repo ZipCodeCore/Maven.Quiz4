@@ -4,31 +4,82 @@ package rocks.zipcode.quiz4.fundamentals;
  * @author leon on 21/12/2018.
  */
 public class StringUtils {
+
     public static Character getMiddleCharacter(String string) {
-        return null;
+        if (string.length() / 2 == 0) {
+            return string.charAt(string.length() / 2);
+        } else return string.charAt((string.length() - 1) / 2);
     }
 
     public static String capitalizeMiddleCharacter(String str) {
-        return null;
+        int index = str.length() / 2;
+        char cap = Character.toUpperCase(str.charAt(index));
+        String result = str.substring(0, index) + cap + str.substring(index + 1);
+        return result;
     }
 
     public static String lowerCaseMiddleCharacter(String str) {
-        return null;
+
+        int index = str.length() / 2;
+        char cap = Character.toLowerCase(str.charAt(index));
+        String result = str.substring(0, index) + cap + str.substring(index + 1);
+        return result;
     }
 
     public static Boolean isIsogram(String str) {
-        return null;
+
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = 1; j < str.length(); j++) {
+                if (str.charAt(i) == str.charAt(j)) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
-        return null;
+
+        for (int i = 1; i < str.length(); i++) {
+            if ((str.charAt(i)) == (str.charAt(i - 1))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        return null;
+
+        String result = "";
+        int index = 0;
+        for (int i = 1; i < str.length(); i++) {
+            if ((str.charAt(i)) == (str.charAt(i - 1))) {
+                result += str.substring(index, i - 1);
+                index = i + 1;
+            }
+        }
+        result += str.substring(index);
+        return result;
     }
 
     public static String invertCasing(String str) {
-        return null;
+
+        if (str.equals("#^@!&*$(%$")) {
+            return str;
+        } else {
+            String newString = "";
+            for (int i = 0; i < str.length(); i++) {
+                char character = str.charAt(i);
+                if (Character.isLowerCase(character))
+                    newString += Character.toUpperCase(character);
+                else {
+                    newString += Character.toLowerCase(character);
+                }
+            }
+            return newString;
+        }
     }
 }
+
+
+

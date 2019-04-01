@@ -22,6 +22,7 @@ public class InvertCasingTest {
 
     @Test
     public void test2() {
+        String input = "tHIS ONE IS KIND OF TRICKY!";
         String expected = "This one is kind of tricky!";
         Assert.assertEquals(expected, invertCasing(invertCasing(expected)));
 
@@ -43,6 +44,7 @@ public class InvertCasingTest {
 
     @Test
     public void test5() {
+        String input = "#^@!&*$(%$";
         String expected = "#^@!&*$(%$";
         Assert.assertEquals(expected, invertCasing(expected));
     }
