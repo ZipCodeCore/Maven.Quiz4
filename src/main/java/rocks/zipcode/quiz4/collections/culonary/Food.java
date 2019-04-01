@@ -14,17 +14,16 @@ public class Food {
     }
 
 
-    public List<Spice > getAllSpices() {
+    public List<Spice> getAllSpices() {
         return spices;
     }
 
    public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
 
-        Map<SpiceType, Integer> spiceMap = new TreeMap<>();
+        Map<SpiceType, Integer> spiceMap = new HashMap<>();
 
-//    spices.stream().forEach((SpiceType)s ->spiceMap.put((SpiceType) s,spiceMap.get(SpiceType)+1) );
-
-
+//        spices.stream().forEach((SpiceType) spice -> spiceMap.put(spice,
+//                        spiceMap.get(spice) != null ? spiceMap.get(spice) + 1 : 1)) ;
         return spiceMap;
     }
 
