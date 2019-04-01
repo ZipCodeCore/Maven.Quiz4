@@ -1,5 +1,9 @@
 package rocks.zipcode.quiz4.fundamentals;
 
+import java.util.Arrays;
+import java.util.Set;
+import java.util.TreeSet;
+
 /**
  * @author leon on 21/12/2018.
  */
@@ -37,16 +41,13 @@ public class StringUtils {
 
     public static Boolean isIsogram(String str) {
 
-        for(int i = 0; i< str.length(); i++){
-            String sub = str.substring(i+1);
-            char c = str.charAt(i);
-            if(sub.indexOf(c) < 0){
-                return true;
-            }
+    Set<String> set = new TreeSet<>();
 
-        }
-        return false;
+    Arrays.stream(str.split("")).forEach(string -> set.add(string));
+    return set.size() == str.length();
     }
+
+
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
         String[] stringArray = str.split("");

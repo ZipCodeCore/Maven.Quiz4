@@ -25,6 +25,8 @@ public class Employee implements Worker,Transactable{
 
     public Employee(BankAccount bankAccount) {
         this.bankAcct = bankAccount;
+        this.hourlyWage = 35.00;
+        this.hoursWorked = 0.0;
     }
 
     public BankAccount getBankAccount() {
