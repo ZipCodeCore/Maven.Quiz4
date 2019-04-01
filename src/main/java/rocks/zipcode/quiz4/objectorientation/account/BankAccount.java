@@ -8,17 +8,14 @@ public class BankAccount {
     private Double val;
 
 
-        @Override
+
         public void deposit(Double amountToIncreaseBy) {
-
         }
 
-        @Override
+
         public void withdrawal(Double amountToDecreaseBy) {
-
         }
 
-        @Override
         public Double getBalance() {
             return null;
         }

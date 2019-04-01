@@ -20,8 +20,6 @@ public class Employee {
         this.hourlyWage = 35.0;
     }
 
-
-
     public BankAccount getBankAccount() {
         return bankAccount;
     }
@@ -30,42 +28,34 @@ public class Employee {
         this.bankAccount = bankAccount;
     }
 
-    @Override
     public void deposit(Double amountToIncreaseBy) {
         bankAccount.deposit(amountToIncreaseBy);
 
     }
 
-    @Override
     public void withdrawal(Double amountToDecreaseBy) {
         bankAccount.withdrawal(amountToDecreaseBy);
 
     }
 
-    @Override
     public Double getBalance() {
         return bankAccount.getBalance();
     }
 
-    @Override
     public void increaseHoursWorked(Double numberOfHours) {
         moneyThatWasEarned += numberOfHours* hourlyWage;
         hoursThatWasWorked += numberOfHours;
 
-
     }
 
-    @Override
     public Double getHoursWorked() {
         return hoursThatWasWorked;
     }
 
-    @Override
     public Double getHourlyWage() {
         return hourlyWage;
     }
 
-    @Override
     public Double getMoneyEarned() {
         return moneyThatWasEarned;
     }
