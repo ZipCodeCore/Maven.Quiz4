@@ -5,7 +5,15 @@ package rocks.zipcode.quiz4.objectorientation.account;
  */
 public interface Worker {
     void increaseHoursWorked(Double numberOfHours);
+
     Double getHoursWorked();
+
     Double getHourlyWage();
+
     Double getMoneyEarned();
+
+    static BankAccount getBankAccount(){
+        return null;
+    }
+
 }
