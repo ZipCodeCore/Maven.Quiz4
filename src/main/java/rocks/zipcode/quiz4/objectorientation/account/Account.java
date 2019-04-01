@@ -8,9 +8,10 @@ public class Account extends BankAccount {
     private Long id;
 
     public Long getId() {
-        return null;
+        return id;
     }
 
     public void setId(Long id) {
+        this.id = id;
     }
 }
