@@ -7,14 +7,20 @@ import java.util.Map;
  * @author leon on 27/12/2018.
  */
 public class Food {
+    Food food;
+
     public List<Spice> getAllSpices() {
+
         return null;
     }
 
     public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
+
         return null;
     }
 
     public void applySpice(Spice spice) {
+
+
     }
 }
