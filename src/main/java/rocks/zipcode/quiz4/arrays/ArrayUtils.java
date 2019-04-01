@@ -22,7 +22,7 @@ public class ArrayUtils {
 
             if(!(s.equals(toRemove))){
 
-                result[i] = values[i];
+                //result[i] = values[i];
                 i++;
             }
         }
