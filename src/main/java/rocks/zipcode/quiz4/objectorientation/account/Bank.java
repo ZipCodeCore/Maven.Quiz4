@@ -10,11 +10,9 @@ public class Bank extends Account{
     private List<BankAccount> accounts = new ArrayList<>();
 
     public BankAccount removeBankAccountByIndex(Integer indexNumber) {
-        System.out.println(this.accounts.remove(indexNumber));
-//        for(int i =0; i < accounts.size(); i++) {
-//            if()
-//        }
-        return null;
+        BankAccount bankAccount = accounts.get(indexNumber);
+        this.accounts.remove((int) indexNumber);
+        return bankAccount;
     }
 
     public void addBankAccount(BankAccount bankAccount) {
