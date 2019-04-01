@@ -28,7 +28,7 @@ public class ArrayUtils {
 
     public static String[] removeLastElement(String[] values) {
         String[] valueRemoved = new String[values.length-1];
-        
+
         return null;
     }
 }
