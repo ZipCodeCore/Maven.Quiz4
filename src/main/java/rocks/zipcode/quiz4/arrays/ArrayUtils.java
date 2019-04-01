@@ -1,6 +1,8 @@
 package rocks.zipcode.quiz4.arrays;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author leon on 01/01/2019.
@@ -18,16 +20,9 @@ public class ArrayUtils {
         int i=0;
         String toRemove= getMiddleElement(values);
 
-        for(String s:values){
+         List<String> result1 = Arrays.stream(values).filter(line -> !(toRemove.equals(line))).collect(Collectors.toList());
 
-            if(!(s.equals(toRemove))){
-
-                //result[i] = values[i];
-                i++;
-            }
-        }
-
-        return null;
+        return result1.toArray( new String[0]);
     }
 
     public static String getLastElement(String[] values) {
