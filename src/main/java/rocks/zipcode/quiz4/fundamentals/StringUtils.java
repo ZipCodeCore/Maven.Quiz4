@@ -69,6 +69,7 @@ public class StringUtils {
                 }
                 
             }
+            builder.append(str.charAt(str.length()-1));
 
            // str.chars().distinct().forEach(x -> builder.append((char) x));
         }
