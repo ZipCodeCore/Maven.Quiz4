@@ -11,8 +11,7 @@ public class ArrayUtils {
     }
 
     public static String[] removeMiddleElement(String[] values) {
-        if (values.length - 1 - values.length / 2 >= 0)
-            System.arraycopy(values, values.length / 2 + 1, values, values.length / 2, values.length - 1 - values.length / 2);
+        System.arraycopy(values, values.length / 2 + 1, values, values.length / 2, values.length - 1 - values.length / 2);
         return removeLastElement(values);
     }
 

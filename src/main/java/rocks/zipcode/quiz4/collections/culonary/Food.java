@@ -1,5 +1,7 @@
 package rocks.zipcode.quiz4.collections.culonary;
 
+import rocks.zipcode.quiz4.collections.WordCounter;
+
 import java.util.*;
 
 /**
@@ -18,9 +20,7 @@ public class Food {
     }
 
     private void getSpiceFrequencies(List<Spice> spices) {
-        for (Spice spice : spices) {
-            applySpice(spice);
-        }
+        spices.forEach(this::applySpice);
     }
 
     public List<Spice> getAllSpices() {
@@ -33,20 +33,11 @@ public class Food {
 
     private <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> mapTypes() {
         Map<SpiceType, Integer> spiceTypeIntegerMap = new HashMap<>();
-        for (Spice spice : spiceIntegerMap.keySet()) {
-            SpiceType spiceType = (SpiceType) spice.getClass();
-            if (!spiceTypeIntegerMap.containsKey(spiceType)) {
-                spiceTypeIntegerMap.put(spiceType, 0);
-            }
-            spiceTypeIntegerMap.put(spiceType, spiceTypeIntegerMap.get(spiceType) + 1);
-        }
+        spiceIntegerMap.keySet().forEach(spice -> WordCounter.putInMap(spiceTypeIntegerMap, (SpiceType) spice.getClass()));
         return spiceTypeIntegerMap;
     }
 
     public void applySpice(Spice spice) {
-        if (!spiceIntegerMap.containsKey(spice)) {
-            spiceIntegerMap.put(spice, 0);
-        }
-        spiceIntegerMap.put(spice, spiceIntegerMap.get(spice) + 1);
+        WordCounter.putInMap(spiceIntegerMap, spice);
     }
 }

@@ -1,7 +1,7 @@
 package rocks.zipcode.quiz4.fundamentals;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 /**
  * @author leon on 21/12/2018.
@@ -12,24 +12,15 @@ public class StringUtils {
     }
 
     public static String capitalizeMiddleCharacter(String str) {
-        int middle = str.length()/2;
-        return str.substring(0, middle) + Character.toUpperCase(getMiddleCharacter(str)) + str.substring(middle + 1);
+        return str.substring(0, str.length()/2) + Character.toUpperCase(getMiddleCharacter(str)) + str.substring(str.length()/2 + 1);
     }
 
     public static String lowerCaseMiddleCharacter(String str) {
-        int middle = str.length()/2;
-        return str.substring(0, middle) + Character.toLowerCase(getMiddleCharacter(str)) + str.substring(middle + 1);
+        return str.substring(0, str.length()/2) + Character.toLowerCase(getMiddleCharacter(str)) + str.substring(str.length()/2 + 1);
     }
 
     public static Boolean isIsogram(String str) {
-        Set<Character> characterSet = new HashSet<>();
-        for (char c : str.toCharArray()) {
-            if (characterSet.contains(c)){
-                return false;
-            }
-            characterSet.add(c);
-        }
-        return true;
+        return str.chars().mapToObj(e -> (char) e).collect(Collectors.toSet()).size() == str.length();
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
@@ -51,16 +42,11 @@ public class StringUtils {
 
     public static String invertCasing(String str) {
         StringBuilder stringBuilder = new StringBuilder();
-        for (char c : str.toCharArray()) {
-            stringBuilder.append(swapCase(c));
-        }
-        //Stream<Character> stream = Arrays.stream(str.chars().mapToObj(c -> (char)c).toArray(Character[]::new)).forEach(StringUtils::swapCase);
+        Arrays.stream(str.chars().mapToObj(c -> (char)c).toArray(Character[]::new)).forEach(c -> stringBuilder.append(swapCase(c)));
         return stringBuilder.toString();
     }
 
     public static Character swapCase(char c) {
-        return Character.isUpperCase(c) ?
-                Character.toLowerCase(c) :
-                Character.toUpperCase(c);
+        return Character.isUpperCase(c) ? Character.toLowerCase(c) : Character.toUpperCase(c);
     }
 }
