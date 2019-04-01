@@ -14,7 +14,9 @@ public class Bank {
     }
 
     public BankAccount removeBankAccountByIndex(Integer indexNumber) {
-        this.bankAccounts.remove(indexNumber);
+        int ind = indexNumber;
+        if(bankAccounts.size() > 0);
+        this.bankAccounts.remove(ind);
         return null;
     }
 
