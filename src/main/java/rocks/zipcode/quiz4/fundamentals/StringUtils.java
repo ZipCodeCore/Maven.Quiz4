@@ -32,7 +32,7 @@ public class StringUtils {
     public static Boolean isIsogram(String str) {
 
         for (int i = 0; i < str.length() -1; i++) {
-            for (int j = 1; j < str.length(); j++) {
+            for (int j = i+1; j < str.length(); j++) {
                 if (str.charAt(i) == str.charAt(j)) {
                     return false;
                 }
@@ -55,7 +55,7 @@ public class StringUtils {
         if(!hasDuplicateConsecutiveCharacters(str)) {
             return str;
         }
-        return null;
+        return str.replaceAll("(\\w)\\1+","");
     }
 
     public static String invertCasing(String str) {

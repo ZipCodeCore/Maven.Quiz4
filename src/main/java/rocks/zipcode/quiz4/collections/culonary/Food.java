@@ -22,14 +22,29 @@ public class Food {
         return listOfSpices;
     }
 
-    public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
-        Map<SpiceType,Integer> spiceMap = new HashMap<>();
+    public Map<Class<? extends Spice>, Integer> getSpiceCount() {
+        Map<Class<? extends Spice>,Integer> spiceMap = new HashMap<>();
         for (Spice spice: listOfSpices) {
-            if(spiceMap.get(spice) == null) {
+            if(spiceMap.get(spice.getClass()) == null) {
+                spiceMap.put(spice.getClass(),1);
+            }
+            else {
+                Integer count = spiceMap.get(spice.getClass());
+                count += 1;
+                spiceMap.put(spice.getClass(),count);
             }
         }
-        return null;
+        return spiceMap;
     }
+
+//    public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
+//        Map<SpiceType,Integer> spiceMap = new HashMap<>();
+//        for (Spice spice: listOfSpices) {
+//            if(spiceMap.get(spice) == null) {
+//            }
+//        }
+//        return null;
+//    }
 
     public void applySpice(Spice spice) {
         listOfSpices.add(spice);
