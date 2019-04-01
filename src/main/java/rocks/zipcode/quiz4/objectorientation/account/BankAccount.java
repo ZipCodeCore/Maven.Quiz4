@@ -6,4 +6,17 @@ package rocks.zipcode.quiz4.objectorientation.account;
 public class BankAccount {
     public void setBalance(Double val) {
     }
+
+    public void withdrawal(Double amountToDecreaseBy) {
+    }
+
+
+    public void deposit(Double amountToIncreaseBy) {
+    }
+
+
+
+    public Double getBalance() {
+    return null;
+    }
 }
