@@ -29,14 +29,14 @@ public class StringUtils {
 
     public static Boolean isIsogram(String str) {
         for (char c : str.toCharArray()) {
-            if(getNumberOfOccurrencies(str, c) > 1) {
+            if(getNumberOfOccurrences(str, c) > 1) {
                 return false;
             }
         }
         return true;
     }
 
-    private static int getNumberOfOccurrencies(String str, char c) {
+    private static int getNumberOfOccurrences(String str, char c) {
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
             if(str.charAt(i) == c){
