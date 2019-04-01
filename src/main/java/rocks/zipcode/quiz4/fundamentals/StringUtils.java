@@ -59,13 +59,15 @@ public class StringUtils {
 
         if(hasDuplicateConsecutiveCharacters(str)) {
            int index;
+            builder.append(str.charAt(0));
+            for (int i = 1; i <str.length()-1 ; i++) {
+                char prev = str.charAt(i-1);
+                char next = str.charAt(i+1);
 
-            for (int i = 0; i <str.length() ; i++) {
-                char c = str.charAt(i);
-                index = str.indexOf(c,i+1);
-                if(index == -1){
-                    builder.append(c);
+                if(str.charAt(i) != prev && str.charAt(i) != next){
+                    builder.append(str.charAt(i));
                 }
+                
             }
 
            // str.chars().distinct().forEach(x -> builder.append((char) x));
