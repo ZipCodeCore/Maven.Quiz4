@@ -48,10 +48,11 @@ public class StringUtils {
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        String answer = "";
+        String answer;
         if (!hasDuplicateConsecutiveCharacters(str)) {
             return str;
         } else {
+            answer = str;
             for (int i = 0; i < str.length() - 1; i++) {
                 if (str.charAt(i) == str.charAt(i + 1)){
                     answer = str.substring(0, i) + str.substring(i + 2);
