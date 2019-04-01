@@ -6,12 +6,18 @@ package rocks.zipcode.quiz4.objectorientation.account;
 public class Account {
     Long id = 0L;
 
+    public Account(Long id) {
+       this.id = id;
+    }
+
+    public Account(BankAccount bankAccount) {
+    }
+
     public Account() {
-        super();
+
     }
 
     public Long getId() {
-
         return this.id;
     }
 
@@ -19,18 +25,4 @@ public class Account {
         this.id = id;
     }
 
-//    @Override
-//    public void deposit(Double amountToIncreaseBy) {
-//        this.balance += amountToIncreaseBy;
-//    }
-//
-//    @Override
-//    public void withdrawal(Double amountToDecreaseBy) {
-//        this.balance -= amountToDecreaseBy;
-//    }
-//
-//    @Override
-//    public Double getBalance() {
-//        return this.balance;
-//    }
 }
