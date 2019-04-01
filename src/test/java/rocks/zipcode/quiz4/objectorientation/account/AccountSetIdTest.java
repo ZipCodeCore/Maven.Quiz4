@@ -5,6 +5,7 @@ import org.junit.Test;
 
 public class AccountSetIdTest {
 
+
     private void test(Long expectedId) {
         // given
         Account account = new Account();
