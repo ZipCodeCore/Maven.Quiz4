@@ -40,23 +40,21 @@ public class StringUtils {
         return false;
     }
 
-    //TODO: return to complete problem
+    //TODO: return to create a better solution. This is TOO LONG!
     public static String removeConsecutiveDuplicateCharacters(String str) {
-//        StringBuilder sb = new StringBuilder();
-//        String normalize = str.toLowerCase();
-//        for(int i =0; i < normalize.length()-1;i++) {
-//            if (normalize.charAt(i) != normalize.charAt(i+1)) {
-//                sb.append(str.charAt(i));
-//                i++;
-//            }
-//        }
-//        return sb.toString();
-        if(hasDuplicateConsecutiveCharacters(str)){
-            return str.toUpperCase();
+        StringBuilder sb = new StringBuilder();
+        String normalize = str.toLowerCase();
+        for(int i =0; i < normalize.length()-1;i++) {
+            if(normalize.charAt(i) != normalize.charAt(i+1)) {
+                sb.append(str.charAt(i));
+            }else{
+                i++;
+            }
         }
-        else{
-            return str;
+        if(normalize.charAt(str.length()-1) != normalize.charAt(str.length()-2)){
+            sb.append(str.charAt(str.length()-1));
         }
+        return sb.toString();
     }
 
     public static String invertCasing(String str) {
