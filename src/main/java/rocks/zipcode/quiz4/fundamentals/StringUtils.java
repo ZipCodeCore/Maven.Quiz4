@@ -41,17 +41,17 @@ public class StringUtils {
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        StringBuilder builder = new StringBuilder(str);
+        StringBuilder builder = new StringBuilder();
         char[] temp = str.toCharArray();
         System.out.println(temp);
         for (int i = 0; i < temp.length-1; i++) {
             if(temp[i] == temp[i+1]){
-                builder.append(temp[i+1]);
                 i++;
             } else {
                 builder.append(temp[i]);
             }
         }
+        builder.append(temp[temp.length-1]);
         return builder.toString();
     }
 
