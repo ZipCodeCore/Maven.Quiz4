@@ -1,5 +1,10 @@
 package rocks.zipcode.quiz4.fundamentals;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @author leon on 21/12/2018.
  */
@@ -27,17 +32,19 @@ public class StringUtils {
     }
 
     public static Boolean isIsogram(String str) {
-        char char1 =str.charAt(0);
-        int count = 0;
-        for (int i = 0; i <str.length() ; i++) {
-            if(str.charAt(i)==char1){
-                count +=1;
-                char1=str.charAt(i);
-            }
 
-        }
-        System.out.println(count);
-        return count==1;
+
+        Set<String> strings = new HashSet<>(Arrays.asList(str));
+//
+//        char char1 =str.charAt(0);
+//        int count = 0;
+//        for (int i = 0; i <str.length() ; i++) {
+//            if(str.charAt(i)==char1){
+//                count +=1;
+//                char1=str.charAt(i);
+//            }
+//        }
+        return strings.size()==str.length();
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
@@ -52,7 +59,6 @@ public class StringUtils {
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-
         String newString = String.valueOf(str.charAt(0));
         for (int i = 0; i < str.length()-1; i++) {
             if(!newString.contains(String.valueOf(str.charAt(i+1)))) {

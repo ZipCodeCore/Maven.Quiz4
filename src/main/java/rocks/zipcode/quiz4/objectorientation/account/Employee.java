@@ -4,17 +4,27 @@ package rocks.zipcode.quiz4.objectorientation.account;
  * @author leon on 30/12/2018.
  */
 public class Employee implements Worker,Transactable  {
-    BankAccount bankAccount;
-    Double numberOfHours;
-    Double HourlyWage;
-    Double balance;
+    public BankAccount bankAccount;
+    public Double totalHours;
+    public Double hourlyWage;
+    public Double balance;
+    //Double hoursWorked;
 
     public Employee() {
-       this.bankAccount = new BankAccount();
+       this(null);
+//        this.balance = 15.0;
     }
 
     public Employee(BankAccount bankAccount) {
-        this.bankAccount = bankAccount;
+
+        this.hourlyWage = 35.0;
+        this.totalHours = 0.0;
+        this.balance = 15.0;
+        if(bankAccount != null)
+            this.bankAccount = bankAccount;
+        else
+            this.bankAccount = new BankAccount();
+//        this.hourlyWage = hourlyWage;
 
     }
 
@@ -29,17 +39,19 @@ public class Employee implements Worker,Transactable  {
 
     @Override
     public void increaseHoursWorked(Double numberOfHours) {
-       numberOfHours = getHoursWorked()+ numberOfHours;
+       totalHours = getHoursWorked()+ numberOfHours;
     }
 
     @Override
     public Double getHoursWorked() {
-        return numberOfHours;
+        return totalHours;
     }
+
+
 
     @Override
     public Double getHourlyWage() {
-        return HourlyWage;
+        return hourlyWage;
     }
 
     @Override
@@ -49,8 +61,11 @@ public class Employee implements Worker,Transactable  {
 
     @Override
     public void deposit(Double amountToIncreaseBy) {
-       balance = bankAccount.getBalance()+ amountToIncreaseBy;
-
+        if (amountToIncreaseBy >= 0) {
+            balance = bankAccount.getBalance() + amountToIncreaseBy;
+            bankAccount.setBalance(balance);
+        } else
+            throw new IllegalArgumentException();
     }
     //  if(amountToIncreaseBy>0) {
     //            val = getBalance() + amountToIncreaseBy;
@@ -70,4 +85,5 @@ public class Employee implements Worker,Transactable  {
         balance = bankAccount.getBalance();
         return balance;
     }
+
 }
