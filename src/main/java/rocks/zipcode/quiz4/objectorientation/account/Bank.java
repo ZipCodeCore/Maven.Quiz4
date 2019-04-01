@@ -19,7 +19,7 @@ public class Bank {
 
     public BankAccount removeBankAccountByIndex(Integer indexNumber) {
         BankAccount removed = bankAccounts.get(indexNumber);
-        bankAccounts.remove(indexNumber);
+        bankAccounts.remove(bankAccounts.get(indexNumber));
         return removed;
     }
 

@@ -23,16 +23,20 @@ public class BankAccount extends Account implements Transactable {
 
     @Override
     public void deposit(Double amountToIncreaseBy) {
-
+        balance = getBalance() + amountToIncreaseBy;
     }
 
     @Override
     public void withdrawal(Double amountToDecreaseBy) {
-
+        if (amountToDecreaseBy > 0) {
+            balance = balance - amountToDecreaseBy;
+        } else {
+            balance = balance - (amountToDecreaseBy * -1);
+        }
     }
 
     @Override
     public Double getBalance() {
-        return null;
+        return balance;
     }
 }
