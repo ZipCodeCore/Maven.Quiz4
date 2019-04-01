@@ -11,15 +11,35 @@ import java.util.stream.Stream;
  */
 public class StringUtils {
     public static Character getMiddleCharacter(String string) {
-            return string.charAt(string.length() / 2);
+        return string.charAt(string.length() / 2);
     }
     
     public static String capitalizeMiddleCharacter(String str) {
-        return String.valueOf(getMiddleCharacter(str.toUpperCase()));
+        char charred = str.charAt(str.length() / 2);
+        StringBuilder sb = new StringBuilder();
+        char[] chars = str.toCharArray();
+        for (char c : chars)
+            if (c != charred) {
+                sb.append(c);
+            } else {
+                sb.append(getMiddleCharacter(str.toUpperCase()));
+            }
+        return sb.toString();
+        
+        //return String.valueOf(getMiddleCharacter(str.toUpperCase()));
     }
     
     public static String lowerCaseMiddleCharacter(String str) {
-        return String.valueOf(getMiddleCharacter(str.toLowerCase()));
+        char charred = str.charAt(str.length() / 2);
+        StringBuilder sb = new StringBuilder();
+        char[] chars = str.toCharArray();
+        for (char c : chars)
+            if (c != charred) {
+                sb.append(c);
+            } else {
+                sb.append(getMiddleCharacter(str.toLowerCase()));
+            }
+        return sb.toString();
     }
     
     public static Boolean isIsogram(String str) {
