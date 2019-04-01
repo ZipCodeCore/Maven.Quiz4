@@ -1,35 +1,34 @@
 package rocks.zipcode.quiz4.collections.culonary;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import rocks.zipcode.quiz4.collections.WordCounter;
+
+import java.util.*;
 
 /**
  * @author leon on 27/12/2018.
  */
 public class Food {
-    List<Spice> spices;
+    private Map<Spice,Integer> spiceMap;
 
     public Food() {
-        spices = new ArrayList<>();
+        this.spiceMap = new LinkedHashMap<>();
     }
 
     public List<Spice> getAllSpices() {
-        return spices;
+        return new ArrayList<>(spiceMap.keySet());
     }
 
     public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
-
         Map<SpiceType,Integer> spiceTypeIntegerMap = new HashMap<>();
-        for(Spice spice:spices) {
-            spiceTypeIntegerMap.putIfAbsent((SpiceType) spice.getClass(), 0);
-            spiceTypeIntegerMap.put((SpiceType) spice.getClass(),spiceTypeIntegerMap.get((SpiceType) spice.getClass())+1);
-        }
+
+        spiceMap.keySet().forEach(spice -> spiceTypeIntegerMap.putIfAbsent((SpiceType) spice.getClass(),0));
+        spiceMap.keySet().forEach(spice -> spiceTypeIntegerMap.put((SpiceType) spice.getClass(),spiceTypeIntegerMap.get(spice.getClass())+1));
+
         return spiceTypeIntegerMap;
     }
 
     public void applySpice(Spice spice) {
-        spices.add(spice);
+        spiceMap.putIfAbsent(spice,0);
+        spiceMap.put(spice,spiceMap.get(spice)+1);
     }
 }

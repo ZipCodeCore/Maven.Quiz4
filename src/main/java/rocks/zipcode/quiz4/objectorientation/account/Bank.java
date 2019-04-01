@@ -7,17 +7,9 @@ import java.util.List;
  * @author leon on 27/12/2018.
  */
 public class Bank {
-    private List<BankAccount> accounts;
+    private List<BankAccount> accounts = new ArrayList<>();
 
-    public Bank() {
-        this.accounts = new ArrayList<>();
-    }
-
-    public BankAccount removeBankAccountByIndex(Integer indexNumber) {
-       BankAccount bankAccountToRemove = accounts.get(indexNumber);
-        accounts.remove(bankAccountToRemove);
-        return bankAccountToRemove;
-    }
+    public BankAccount removeBankAccountByIndex(int indexNumber) { return accounts.remove(indexNumber); }
 
     public void addBankAccount(BankAccount bankAccount) {
         accounts.add(bankAccount);

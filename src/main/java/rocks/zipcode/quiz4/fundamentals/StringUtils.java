@@ -1,5 +1,8 @@
 package rocks.zipcode.quiz4.fundamentals;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 /**
  * @author leon on 21/12/2018.
  */
@@ -27,26 +30,11 @@ public class StringUtils {
     }
 
     public static Boolean isIsogram(String str) {
-        StringBuilder sb = new StringBuilder(str);
-        for (int i = 0; i < sb.length(); i++) {
-            for (int j = i+1; j < sb.length(); j++) {
-                if(sb.charAt(i)==sb.charAt(j)){
-                    return false;
-                }
-            }
-        }
-
-        return true;
+        return str.chars().mapToObj(c -> (char) c).collect(Collectors.toSet()).size() == str.length();
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
-        StringBuilder sb = new StringBuilder(str);
-        for (int i = 1; i < sb.length(); i++) {
-            if(sb.charAt(i)==sb.charAt(i-1)){
-                return true;
-            }
-        }
-        return false;
+        return str.length() != removeConsecutiveDuplicateCharacters(str).length();
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
@@ -56,19 +44,13 @@ public class StringUtils {
                 sb.delete(i-1,i+1);
             }
         }
-
         return sb.toString();
     }
 
     public static String invertCasing(String str) {
-        StringBuilder sb = new StringBuilder(str);
-        for (int i = 0; i < sb.length(); i++) {
-            if(Character.isUpperCase(sb.charAt(i))){
-                sb.setCharAt(i,Character.toLowerCase(sb.charAt(i)));
-            }else{
-                sb.setCharAt(i,Character.toUpperCase(sb.charAt(i)));
-            }
-        }
+        StringBuilder sb = new StringBuilder();
+        Arrays.stream(str.chars().mapToObj(letter -> (char) letter).toArray(Character[]::new))
+                .forEach(letter ->sb.append(Character.isUpperCase(letter) ? Character.toLowerCase(letter) : Character.toUpperCase(letter)));
         return sb.toString();
     }
 }

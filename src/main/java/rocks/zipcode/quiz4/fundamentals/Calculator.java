@@ -18,17 +18,11 @@ public class Calculator {
     }
 
     public static Double[] squareRoots(Double... value) {
-        List<Double> squareRootList = new ArrayList<>();
-        Stream.of(value).forEach(num -> squareRootList.add(squareRoot(num)));
-
-        return squareRootList.toArray(new Double[0]);
+        return Arrays.stream(value).map(Calculator::squareRoot).toArray(Double[]::new);
     }
 
     public static Double[] squares(Double... values) {
-       List<Double> squareList = new ArrayList<>();
-        Stream.of(values).forEach(value -> squareList.add(square(value)));
-
-        return squareList.toArray(new Double[0]);
+       return Arrays.stream(values).map(Calculator::square).toArray(Double[]::new);
     }
 
     public static Double add(Double value1, Double value2) {

@@ -10,9 +10,7 @@ public class Employee implements Worker,Transactable{
     private Double wage;
 
     public Employee() {
-        this.bankAccount = new BankAccount();
-        hoursWorked = 0.0;
-        this.wage = 35.0;
+        this(new BankAccount());
     }
 
     public Employee(BankAccount bankAccount) {

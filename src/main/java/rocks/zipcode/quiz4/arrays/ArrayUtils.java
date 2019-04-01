@@ -23,8 +23,6 @@ public class ArrayUtils {
     }
 
     public static String[] removeLastElement(String[] values) {
-        List<String> newList = new ArrayList<>(Arrays.asList(values));
-        newList.remove(values.length-1);
-        return newList.toArray(new String[0]);
+        return Arrays.copyOfRange(values,0,values.length-1);
     }
 }
