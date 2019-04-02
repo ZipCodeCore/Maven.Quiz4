@@ -7,7 +7,7 @@ import com.sun.javafx.util.Logging;
  */
 public class BankAccount extends Account implements Transactable{
 
-    Double balance;
+    Double balance = 0.0;
 
     public void setBalance(Double val) {
         this.balance = val;

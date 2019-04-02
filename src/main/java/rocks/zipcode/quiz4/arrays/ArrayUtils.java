@@ -1,6 +1,9 @@
 package rocks.zipcode.quiz4.arrays;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * @author leon on 01/01/2019.
@@ -11,16 +14,14 @@ public class ArrayUtils {
     }
 
     public static String[] removeMiddleElement(String[] values) {
-        int originalLength = values.length;
-        String[] copyLeft = Arrays.copyOfRange(values,0,(originalLength/2));
-        String[] copyRight = Arrays.copyOfRange(values,(originalLength/2) + 1, originalLength);
 
-        String[] copyTotal = new String[originalLength - 1];
+        Integer middleElement = values.length / 2;
 
-        System.arraycopy(copyLeft, 0, copyTotal, 0, copyLeft.length);
-        System.arraycopy(copyRight, 0, copyTotal, copyLeft.length, copyRight.length);
-
-        return copyTotal;
+        return IntStream
+                .range(0,values.length)
+                .filter( i -> i != middleElement)
+                .mapToObj( i -> values[i] )
+                .toArray(String[]::new);
     }
 
     public static String getLastElement(String[] values) {

@@ -56,7 +56,6 @@ public class Employee implements Worker, Transactable{
 
     @Override
     public Double getHoursWorked() {
-        System.out.println("->" + expectedHoursWorked);
         return this.expectedHoursWorked;
     }
 
@@ -69,6 +68,5 @@ public class Employee implements Worker, Transactable{
     public Double getMoneyEarned() {
         return this.expectedHourlyWage * this.expectedHoursWorked;
     }
-
 
 }
