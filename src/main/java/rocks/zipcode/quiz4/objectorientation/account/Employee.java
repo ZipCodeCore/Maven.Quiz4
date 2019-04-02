@@ -6,22 +6,24 @@ package rocks.zipcode.quiz4.objectorientation.account;
 public class Employee implements Worker, Transactable{
 
     BankAccount bankAccount;
-    private Double expectedHourlyWage ;
-    private Double expectedHoursWorked;
+    private Double expectedHourlyWage = 35.0;
+    private Double expectedHoursWorked = 0.0;
     private Double expectedBalance;
-    private Double expectedBankAccountBalance = 0.0;
+    private Double expectedBankAccountBalance;
+    private Double numberOfHours;
 
     public Employee() {
         this.bankAccount = new BankAccount();
-        expectedHourlyWage = 35.0;
-        expectedHoursWorked = 0.0;
-        expectedBalance = 0.0;
-        expectedBankAccountBalance = 0.0;
-        bankAccount.balance = 0.0;
+        this.expectedHourlyWage = 35.0;
+        this.expectedHoursWorked = 0.0;
+        this.expectedBalance = 0.0;
+        this.expectedBankAccountBalance = 0.0;
+        this.bankAccount.balance = 0.0;
     }
 
     public Employee(BankAccount bankAccount) {
         this.bankAccount = bankAccount;
+
     }
 
     public BankAccount getBankAccount() {
@@ -34,12 +36,11 @@ public class Employee implements Worker, Transactable{
 
     @Override
     public void deposit(Double amountToIncreaseBy) {
-
+        bankAccount.deposit(amountToIncreaseBy);
     }
 
     @Override
     public void withdrawal(Double amountToDecreaseBy) {
-
     }
 
     @Override
@@ -49,11 +50,13 @@ public class Employee implements Worker, Transactable{
 
     @Override
     public void increaseHoursWorked(Double numberOfHours) {
-
+//        this.expectedHoursWorked =+ numberOfHours;
+        this.expectedHoursWorked = (numberOfHours + this.expectedHoursWorked);
     }
 
     @Override
     public Double getHoursWorked() {
+        System.out.println("->" + expectedHoursWorked);
         return this.expectedHoursWorked;
     }
 
@@ -64,6 +67,8 @@ public class Employee implements Worker, Transactable{
 
     @Override
     public Double getMoneyEarned() {
-        return null;
+        return this.expectedHourlyWage * this.expectedHoursWorked;
     }
+
+
 }

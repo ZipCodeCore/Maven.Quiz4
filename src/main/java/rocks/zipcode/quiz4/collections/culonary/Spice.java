@@ -5,8 +5,8 @@ package rocks.zipcode.quiz4.collections.culonary;
  */
 public interface Spice {
 
-
-    Ginger ginger = new Ginger();
+    public String getName();
+//    Ginger ginger = new Ginger();
 
 
 }
