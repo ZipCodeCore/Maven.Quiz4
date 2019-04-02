@@ -1,6 +1,7 @@
 package rocks.zipcode.quiz4.fundamentals;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -16,17 +17,25 @@ public class Calculator {
     }
 
     public static Double[] squareRoots(Double... value) {
-        for (int i = 0; i < value.length; i++) {
-            value[i] = squareRoot(value[i]);
-        }
-        return value;
+//        for (int i = 0; i < value.length; i++) {
+//            value[i] = squareRoot(value[i]);
+//        }
+//        return value;
+        return Arrays
+                .stream(value)
+                .map(Calculator::squareRoot)//(value -> squareRoot(value))
+                .toArray(Double[]::new);
     }
 
     public static Double[] squares(Double... values) {
-        for (int i = 0; i < values.length; i++) {
-            values[i] = square(values[i]);
-        }
-        return values;
+//        for (int i = 0; i < values.length; i++) {
+//            values[i] = square(values[i]);
+//        }
+//        return values;
+        return Arrays
+                .stream(values)
+                .map(Calculator::square)//(value -> square(value))
+                .toArray(Double[]::new);
     }
 
     public static Double add(Double value1, Double value2) {
