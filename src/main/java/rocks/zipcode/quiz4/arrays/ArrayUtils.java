@@ -20,6 +20,13 @@ public class ArrayUtils {
     }
 
     public static String[] removeLastElement(String[] values) {
-        return null;
+
+        String [] last = new String [values.length-1];
+        for (int i = 0; i <values.length-1; i++) {
+            last[i] = values[i];
+
+        }
+
+        return last;
     }
 }
