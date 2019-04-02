@@ -8,9 +8,11 @@ import java.util.List;
  */
 public class Bank {
 
-    List<BankAccount> listOfAccounts;
+    private List<BankAccount> listOfAccounts;
 
     public Bank() {
+
+        this.listOfAccounts = new ArrayList<>();
     }
 
     public Bank(List<BankAccount> bankAccountList) {
@@ -32,9 +34,9 @@ public class Bank {
     }
 
     public Boolean containsBankAccount(BankAccount bankAccount) {
-        throw new UnsupportedOperationException("Method not yet implemented");
+        //throw new UnsupportedOperationException("Method not yet implemented");
 
-        //return listOfAccounts.contains(bankAccount);
+        return listOfAccounts.contains(bankAccount);
 
 
     }
