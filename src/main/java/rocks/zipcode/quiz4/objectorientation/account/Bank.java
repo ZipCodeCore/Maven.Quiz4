@@ -11,9 +11,10 @@ public class Bank {
     List<BankAccount> bankAccounts = new ArrayList<>();
 
     public BankAccount removeBankAccountByIndex(Integer indexNumber) {
-        BankAccount temporal = bankAccounts.get(indexNumber);
-        bankAccounts.remove(bankAccounts.get(indexNumber));
-        return temporal;
+//        BankAccount temporal = bankAccounts.get(indexNumber.intValue());
+        bankAccounts.remove(indexNumber.intValue());
+        return null;
+//        return temporal;
     }
 
     public void addBankAccount(BankAccount bankAccount) {

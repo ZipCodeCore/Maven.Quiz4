@@ -7,7 +7,7 @@ import com.sun.javafx.util.Logging;
  */
 public class BankAccount extends Account implements Transactable{
 
-    Double balance = 0.0;
+    private double balance;
 
     public void setBalance(Double val) {
         this.balance = val;
@@ -16,7 +16,7 @@ public class BankAccount extends Account implements Transactable{
     @Override
     public void deposit(Double amountToIncreaseBy) {
         if ( amountToIncreaseBy >= 0){
-            this.balance = balance + amountToIncreaseBy;
+            balance += amountToIncreaseBy;
         }
         else {
             throw new IllegalArgumentException("Value must be non-negative");
@@ -25,17 +25,21 @@ public class BankAccount extends Account implements Transactable{
 
     @Override
     public void withdrawal(Double amountToDecreaseBy) {
-        if ( (amountToDecreaseBy > 0) && (balance - amountToDecreaseBy) >= 0 ){
-            this.balance = balance - amountToDecreaseBy;
-        }
-        else {
+
+
+
+        boolean isInvalidAmount = amountToDecreaseBy < 0;
+        boolean isGreaterThanFunds = amountToDecreaseBy > balance;
+        if ( isInvalidAmount || isGreaterThanFunds){
+//        if ( (amountToDecreaseBy > 0) && (balance - amountToDecreaseBy) >= 0 ){
             throw new IllegalArgumentException("Value must be non-positive");
         }
+            balance -= amountToDecreaseBy;
     }
 
     @Override
     public Double getBalance() {
-        return this.balance;
+        return balance;
     }
 
 

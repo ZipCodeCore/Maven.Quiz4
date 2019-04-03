@@ -1,9 +1,11 @@
 package rocks.zipcode.quiz4.fundamentals;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author leon on 21/12/2018.
@@ -35,14 +37,16 @@ public class StringUtils {
     }
 
     public static Boolean isIsogram(String str) {
-        Map<String, Long> x = Arrays.stream(str.split(""))
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        for (Long l : x.values()) {
-            if (l > 1){
-                return false;
-            }
-        }
-        return true;
+
+//        Map<String, Long> x = Arrays.stream(str.split(""))
+//                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+//        for (Long l : x.values()) {
+//            if (l > 1){
+//                return false;
+//            }
+//        }
+        return Arrays.stream(str.split(""))
+                .allMatch( x -> Collections.frequency(Arrays.asList(str.split("")), x) == 1);
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
@@ -58,7 +62,7 @@ public class StringUtils {
         StringBuilder strBui = new StringBuilder();
         strBui.append(str);
         int index = 0;
-        for (int i = 0; i < strBui.length()-2; i++) {
+        for (int i = 0; i < strBui.length() - 2; i++) {
             if (strBui.charAt(i) == strBui.charAt(i + 1)){
                 strBui.delete(i, i + 2);
                 index++;
@@ -68,15 +72,22 @@ public class StringUtils {
     }
 
     public static String invertCasing(String str) {
-        StringBuilder strBui = new StringBuilder();
-        Character[] strArray = Arrays.stream(str.split(""))
-                .map(s -> s.charAt(0))
-                .toArray(Character[]::new);
-        for (Character c : strArray) {
-            strBui.append( Character.isUpperCase(c)
-                    ? c.toString().toLowerCase()
-                    : c.toString().toUpperCase() );
-        }
-        return strBui.toString();
+
+//        StringBuilder strBui = new StringBuilder();
+//        Character[] strArray = Arrays.stream(str.split(""))
+//                .map(s -> s.charAt(0))
+//                .toArray(Character[]::new);
+//
+//        for (Character c : strArray) {
+//            strBui.append( Character.isUpperCase(c)
+//                    ? c.toString().toLowerCase()
+//                    : c.toString().toUpperCase() );
+//        }
+//        return strBui.toString();
+        return Arrays.stream(str.split(""))
+                .map(c -> Character.isUpperCase(c.charAt(0))
+                        ? c.toLowerCase()
+                        : c.toUpperCase() )
+                .collect(Collectors.joining(""));
     }
 }
