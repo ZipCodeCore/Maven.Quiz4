@@ -11,14 +11,17 @@ public class Employee implements Worker, Transactable {
 
 
     public Employee() {
-        this.hourlyWage = 0.0;
+        this.hourlyWage = 35.0;
         this.hoursWorked = 0.0;
         this.bankAccount = new BankAccount();
-        this.bankAccount.balance = 0.0;
+        this.balance = 0.0;
     }
 
     public Employee(BankAccount bankAccount) {
-        this.bankAccount = new BankAccount(bankAccount);
+        this.hourlyWage = 35.0;
+        this.hoursWorked = 0.0;
+        this.balance = 15.0;
+        this.bankAccount = bankAccount;
     }
 
     public BankAccount getBankAccount() {
@@ -52,7 +55,8 @@ public class Employee implements Worker, Transactable {
 
     @Override
     public void deposit(Double amountToIncreaseBy) {
-        this.bankAccount.balance += amountToIncreaseBy;
+        balance = this.bankAccount.getBalance() + amountToIncreaseBy;
+        this.bankAccount.setBalance(balance);
 
     }
 
