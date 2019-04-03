@@ -8,4 +8,5 @@ public interface Worker {
     Double getHoursWorked();
     Double getHourlyWage();
     Double getMoneyEarned();
+
 }

@@ -43,6 +43,7 @@ public class GetSpiceCountTest {
 
     @Test
     public void test1() {
+//        test(5, Pepper::new);
         test(5, Pepper::new);
     }
 
