@@ -17,12 +17,14 @@ public class Food {
         return list;
     }
 
-    public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
+    public Map<Class<? extends Spice>, Integer> getSpiceCount() {
 
         return list
                 .stream()
-                .collect(Collectors.toMap(s -> (SpiceType)s.getClass(), s -> 1,
-                        (oldValue,newValue) -> (oldValue + newValue) ) );
+                .collect(Collectors.toMap(
+                        Spice::getClass,
+                        s -> 1,
+                        (oldValue,newValue) -> (oldValue + newValue)));
     }
 
     public void applySpice(Spice spice) {
