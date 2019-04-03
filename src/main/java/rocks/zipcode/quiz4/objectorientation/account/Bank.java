@@ -15,13 +15,6 @@ public class Bank {
         this.listOfAccounts = new ArrayList<>();
     }
 
-    public Bank(List<BankAccount> bankAccountList) {
-        if (bankAccountList.equals(null))
-            this.listOfAccounts = new ArrayList<>();
-        else
-            this.listOfAccounts = bankAccountList;
-    }
-
     public BankAccount removeBankAccountByIndex(Integer indexNumber) {
         BankAccount account = listOfAccounts.get(indexNumber);
         listOfAccounts.remove(account);
