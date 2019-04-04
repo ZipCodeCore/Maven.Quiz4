@@ -1,10 +1,7 @@
 package rocks.zipcode.quiz4.collections.culonary;
 
-public class Curry implements Spice {
+public class Curry extends Spice {
 
 
-    @Override
-    public void spiceName() {
 
-    }
 }

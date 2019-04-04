@@ -1,34 +1,37 @@
 package rocks.zipcode.quiz4.objectorientation.account;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author leon on 27/12/2018.
  */
 public class Bank {
-    private Integer accid;
-    private BankAccount bankAcc;
+    List<BankAccount> bankaccounts;
 
-    public Integer getAccid() {
-        return accid;
+
+    public Bank() {
+        this.bankaccounts = new ArrayList<>();
     }
 
-    public void setAccid(Integer accid) {
-        this.accid = accid;
-    }
-
-    public BankAccount removeBankAccountByIndex(Integer indexNumber) {
 
 
-        return null;
+    public BankAccount removeBankAccountByIndex(int indexNumber) {
+        BankAccount bankacc = bankaccounts.get(indexNumber);
+
+       bankaccounts.remove(bankacc);
+        return bankacc;
     }
 
     public void addBankAccount(BankAccount bankAccount) {
-        this.bankAcc = bankAccount;
+
+        this.bankaccounts.add(bankAccount);
     }
 
     public Boolean containsBankAccount(BankAccount bankAccount) {
-        if(bankAccount == bankAcc){
+        if(bankaccounts.contains(bankAccount)){
             return true;
-        }else
+        }
             return false;
     }
 }

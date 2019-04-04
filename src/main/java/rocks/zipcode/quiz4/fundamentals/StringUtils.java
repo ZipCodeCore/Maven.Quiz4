@@ -1,6 +1,5 @@
 package rocks.zipcode.quiz4.fundamentals;
 
-import java.util.Arrays;
 
 /**
  * @author leon on 21/12/2018.
@@ -13,54 +12,66 @@ public class StringUtils {
     }
 
     public static String capitalizeMiddleCharacter(String str) {
-        int stringLength = str.length() ;
 
-        int middle = stringLength/2 ;
 
-        char c = str.charAt(middle);
-            char ch = Character.toUpperCase(c);
+        return str.substring(0, str.length()/2) + Character.toUpperCase(getMiddleCharacter(str)) + str.substring(str.length()/2 + 1);
 
-        return String.valueOf(ch);
+
     }
+
 
     public static String lowerCaseMiddleCharacter(String str) {
 
 
-        int middle = str.length()/2 ;
+        return str.substring(0, str.length()/2) + Character.toLowerCase(getMiddleCharacter(str)) + str.substring(str.length()/2 + 1);
 
-        char c = str.charAt(middle);
-        char ch = Character.toLowerCase(c);
 
-        return String.valueOf(ch);
     }
 
     public static Boolean isIsogram(String str) {
+        return str.length() == str.chars().distinct().count();
 
-        str = str.toLowerCase();
-        int len = str.length();
-
-        char arr[] = str.toCharArray();
-
-        Arrays.sort(arr);
-        for (int i = 0; i < len - 1; i++) {
-            if (arr[i] == arr[i + 1])
-                return false;
-        }
-        return true;
     }
 
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
-        if(str.length()<2) {
-            return true;
-        }else
-        return false;
+     Boolean flag = false;
+
+        for (int i = str.length() - 1; i > 0; i--) {
+            if (str.charAt(i) == str.charAt(i - 1)) {
+                flag = true;
+            }
+        }
+
+        return flag;
 
 
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        return str.replaceAll("(.)(?=\\1)", "");
+        StringBuilder builder = new StringBuilder();
+
+        if(hasDuplicateConsecutiveCharacters(str)) {
+            int index;
+            builder.append(str.charAt(0));
+            for (int i = 1; i <str.length()-1 ; i++) {
+                char prev = str.charAt(i-1);
+                char next = str.charAt(i+1);
+
+                if(str.charAt(i) != prev && str.charAt(i) != next){
+                    builder.append(str.charAt(i));
+                }
+
+            }
+            builder.append(str.charAt(str.length()-1));
+
+        }
+        else{
+            return str;
+        }
+
+        return builder.toString();
+
     }
 
 
