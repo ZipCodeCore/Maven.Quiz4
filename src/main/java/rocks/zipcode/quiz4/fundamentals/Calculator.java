@@ -14,13 +14,22 @@ public class Calculator {
         return value * value;
     }
 
-    public static Double[] squareRoots(Double... value) {
-
-        return null;
+    public static Double[] squareRoots(Double... values) {
+        Double[] squareRoots = new Double[values.length];
+        for (int i = 0; i < squareRoots.length; i++) {
+            Double value= values[i];
+           squareRoots[i] = squareRoot(value);
+        }
+        return squareRoots;
     }
 
     public static Double[] squares(Double... values) {
-        return null;
+        Double[] squares = new Double[values.length];
+        for (int i = 0; i < squares.length; i++) {
+            Double value= values[i];
+            squares[i] = square(value);
+        }
+        return squares;
     }
 
     public static Double add(Double value1, Double value2) {

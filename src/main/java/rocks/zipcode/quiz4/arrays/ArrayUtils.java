@@ -7,32 +7,17 @@ import java.util.*;
  */
 public class ArrayUtils {
     public static String getMiddleElement(String[] values) {
-        String result = "";
 
-        // Determine if the array is odd or even
-        int value = values.length % 2;
-
-        // Obtain the middle index
         int middleIndex = values.length/2;
 
-        // Adjust for the zero index of arrays
-        int evenMid = middleIndex - 1;
 
-        if( value == 0 ){
-            // The array is even, so obtain the two middle elements
-            result += values[evenMid] + "\n" + values[(evenMid+1)];
-        }
-        else{
-            // The array is odd, so obtain the single middle element
-            result += values[middleIndex];
-        }
-
-        return result;
+        return values[middleIndex];
     }
 
     public static String[] removeMiddleElement(String[] values) {
-
-      return null;
+        List<String> list = new ArrayList<>(Arrays.asList(values));
+        list.remove(list.size()/2);
+      return list.toArray(new String[0]);
     }
 
     public static String getLastElement(String[] values) {
