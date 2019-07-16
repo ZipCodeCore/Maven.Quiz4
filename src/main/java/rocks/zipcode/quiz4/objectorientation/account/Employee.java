@@ -15,11 +15,17 @@ public class Employee implements Worker, Transactable {
 
     @Override
     public void deposit(Double increaseBy) {
+        if (increaseBy < 0) {
+            throw new IllegalArgumentException();
+        }
         account.deposit(increaseBy);
     }
 
     @Override
     public void withdrawal(Double decreaseBy) {
+        if (account.getBalance() == 0) {
+            throw new IllegalArgumentException();
+        }
         account.withdrawal(decreaseBy);
     }
 
@@ -40,6 +46,7 @@ public class Employee implements Worker, Transactable {
 
     @Override
     public void increaseHoursWorked(Double numberOfHoursWorkedSoFar) {
+        hours = 0.0;
         this.hours += numberOfHoursWorkedSoFar;
 
     }
