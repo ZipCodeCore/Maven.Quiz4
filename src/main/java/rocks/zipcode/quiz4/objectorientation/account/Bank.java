@@ -7,17 +7,26 @@ import java.util.List;
  */
 public class Bank {
 
-        private List<BankAccount> bankAccounts = new ArrayList<>();
+        private ArrayList<BankAccount> accounts;
 
-        public BankAccount removeBankAccountByIndex(int indexNumber) {
-            return bankAccounts.remove(indexNumber);
+        public Bank() {
+            this.accounts = new ArrayList<>();
+        }
+
+        public Bank(ArrayList<BankAccount> bankAccounts) {
+            this.accounts = bankAccounts;
+        }
+
+
+        public BankAccount removeBankAccountByIndex(int index) {
+            return accounts.remove(index);
         }
 
         public void addBankAccount(BankAccount bankAccount) {
-            bankAccounts.add(bankAccount);
+            accounts.add(bankAccount);
         }
 
         public Boolean containsBankAccount(BankAccount bankAccount) {
-            return bankAccounts.contains(bankAccount);
+            return accounts.contains(bankAccount);
         }
 }

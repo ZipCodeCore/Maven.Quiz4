@@ -3,25 +3,30 @@ package rocks.zipcode.quiz4.objectorientation.account;
 /**
  * @author leon on 27/12/2018.
  */
-public class BankAccount {
+public class BankAccount extends Account implements Transactable {
 
-    private Double val;
+    private Double balance;
 
+    public BankAccount() {
+        this.balance = 0.0;
+    }
 
+    @Override
+    public void deposit(Double increaseBy) {
+        balance += increaseBy;
+    }
 
-        public void deposit(Double amountToIncreaseBy) {
-        }
+    @Override
+    public void withdrawal(Double decreaseBy) {
+        balance -= decreaseBy;
+    }
 
+    @Override
+    public Double getBalance() {
+        return balance;
+    }
 
-        public void withdrawal(Double amountToDecreaseBy) {
-        }
-
-        public Double getBalance() {
-            return null;
-        }
-
-
-    public void setBalance(Double val) {
-        this.val = val;
+    public void setBalance(Double initialBalance) {
+        this.balance = initialBalance;
     }
 }

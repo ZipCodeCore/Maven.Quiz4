@@ -3,60 +3,54 @@ package rocks.zipcode.quiz4.objectorientation.account;
 /**
  * @author leon on 30/12/2018.
  */
-public class Employee {
-    private BankAccount bankAccount;
-    private Double hoursThatWasWorked;
-    private Double moneyThatWasEarned;
-    private Double hourlyWage;
+public class Employee implements Worker, Transactable {
+
+    BankAccount account;
+    Double hours;
+    Double wage;
 
     public Employee() {
-
+        this.account = new BankAccount();
     }
 
-    public Employee(BankAccount bankAccount) {
-        this.bankAccount = bankAccount;
-        this.hoursThatWasWorked = 0.0;
-        this.moneyThatWasEarned = 0.0;
-        this.hourlyWage = 35.0;
+    @Override
+    public void deposit(Double increaseBy) {
+        account.deposit(increaseBy);
     }
 
-    public BankAccount getBankAccount() {
-        return bankAccount;
+    @Override
+    public void withdrawal(Double decreaseBy) {
+        account.withdrawal(decreaseBy);
     }
 
-    public void setBankAccount(BankAccount bankAccount) {
-        this.bankAccount = bankAccount;
-    }
-
-    public void deposit(Double amountToIncreaseBy) {
-        bankAccount.deposit(amountToIncreaseBy);
-
-    }
-
-    public void withdrawal(Double amountToDecreaseBy) {
-        bankAccount.withdrawal(amountToDecreaseBy);
-
-    }
-
+    @Override
     public Double getBalance() {
-        return bankAccount.getBalance();
+        return account.getBalance();
     }
 
-    public void increaseHoursWorked(Double numberOfHours) {
-        moneyThatWasEarned += numberOfHours* hourlyWage;
-        hoursThatWasWorked += numberOfHours;
+    @Override
+    public BankAccount getBankAccount() {
+        return this.account;
+    }
+
+    @Override
+    public void setBankAccount(BankAccount bankAccount) {
+        this.account = bankAccount;
+    }
+
+    @Override
+    public void increaseHoursWorked(Double numberOfHoursWorkedSoFar) {
+        this.hours += numberOfHoursWorkedSoFar;
 
     }
 
+    @Override
     public Double getHoursWorked() {
-        return hoursThatWasWorked;
+        return hours;
     }
 
+    @Override
     public Double getHourlyWage() {
-        return hourlyWage;
-    }
-
-    public Double getMoneyEarned() {
-        return moneyThatWasEarned;
+        return wage * getHoursWorked();
     }
 }

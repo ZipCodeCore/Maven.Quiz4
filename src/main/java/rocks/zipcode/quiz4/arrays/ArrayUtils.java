@@ -5,6 +5,8 @@ import java.util.*;
  * @author leon on 01/01/2019.
  */
 public class ArrayUtils {
+
+
     public static String getMiddleElement(String[] values) {
 
         if (values.length / 2 == 0) {

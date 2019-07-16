@@ -3,15 +3,14 @@ package rocks.zipcode.quiz4.objectorientation.account;
 /**
  * @author leon on 30/12/2018.
  */
-public class Account extends BankAccount {
+public class Account {
 
     private Long id;
 
-    public Long getId() {
+    Long getId() {
         return id;
     }
-
-    public void setId(Long id) {
+    void setId(Long id) {
         this.id = id;
     }
 }
