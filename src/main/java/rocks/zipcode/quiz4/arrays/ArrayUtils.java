@@ -5,18 +5,30 @@ package rocks.zipcode.quiz4.arrays;
  */
 public class ArrayUtils {
     public static String getMiddleElement(String[] values) {
-        return null;
+        return values[middleIndex(values.length)];
     }
 
     public static String[] removeMiddleElement(String[] values) {
-        return null;
+        int idx = middleIndex(values.length);
+        String[] out = new String[values.length-1];
+        for (int i = 0; i < values.length; i++) {
+            if (i < idx) out[i] = values[i];
+            else if (i > idx) out[i-1] = values[i];
+        }
+        return out;
     }
 
     public static String getLastElement(String[] values) {
-        return null;
+        return values[values.length-1];
     }
 
     public static String[] removeLastElement(String[] values) {
-        return null;
+        String[] out = new String[values.length-1];
+        for (int i = 0; i < out.length; i++) out[i] = values[i];
+        return out;
+    }
+
+    private static Integer middleIndex(Integer len) {
+        return (len - (len % 2)) / 2;
     }
 }
