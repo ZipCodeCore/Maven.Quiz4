@@ -8,7 +8,6 @@ import java.util.List;
  */
 public class ArrayUtils {
     public static String getMiddleElement(String[] values) {
-
         return values[values.length/2];
     }
 
