@@ -25,7 +25,17 @@ public class StringUtils {
     }
 
     public static String lowerCaseMiddleCharacter(String str) {
-        return null;
+        String result = "";
+
+        for (int i = 0; i < str.length(); i++){
+            if (i == str.length()/2) {
+                result = result.concat(String.valueOf(str.toLowerCase().charAt(i)));
+            } else {
+                result = result.concat(String.valueOf(str.charAt(i)));
+            }
+        }
+
+        return result;
     }
 
     public static Boolean isIsogram(String str) {
