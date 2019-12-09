@@ -1,5 +1,6 @@
 package rocks.zipcode.quiz4.collections.culonary;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -7,8 +8,12 @@ import java.util.Map;
  * @author leon on 27/12/2018.
  */
 public class Food {
+
+    List<Spice> allSpices = new ArrayList<>();
+
     public List<Spice> getAllSpices() {
-        return null;
+
+        return allSpices;
     }
 
     public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
@@ -16,5 +21,6 @@ public class Food {
     }
 
     public void applySpice(Spice spice) {
+        allSpices.add(spice);
     }
 }
