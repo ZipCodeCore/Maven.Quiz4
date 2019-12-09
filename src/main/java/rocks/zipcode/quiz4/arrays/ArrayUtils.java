@@ -25,7 +25,7 @@ public class ArrayUtils {
 
     public static String getLastElement(String[] values) {
 
-        return null;
+        return values[values.length-1];
     }
 
     public static String[] removeLastElement(String[] values) {
