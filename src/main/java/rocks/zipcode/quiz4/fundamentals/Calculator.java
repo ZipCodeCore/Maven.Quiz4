@@ -30,7 +30,8 @@ public class Calculator {
     }
 
     public static Double subtract(Double value1, Double value2) {
-        return null;
+
+        return value1 - value2;
     }
 
 
