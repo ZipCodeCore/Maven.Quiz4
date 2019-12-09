@@ -5,6 +5,7 @@ package rocks.zipcode.quiz4.arrays;
  */
 public class ArrayUtils {
     public static String getMiddleElement(String[] values) {
+
         return null;
     }
 
@@ -13,10 +14,16 @@ public class ArrayUtils {
     }
 
     public static String getLastElement(String[] values) {
+
         return null;
     }
 
     public static String[] removeLastElement(String[] values) {
-        return null;
+        String [] result = new String[values.length-1];
+
+        for (int i = 0; i < result.length; i++){
+            result[i] = values[i];
+        }
+        return result;
     }
 }
