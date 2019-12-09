@@ -18,8 +18,13 @@ public class Calculator {
     }
 
     public static Double[] squareRoots(Double... value) {
+        List<Double> array = new ArrayList<>();
+        Double[] result = new Double[0];
 
-        return null;
+        for(Double each : value){
+            array.add(Math.sqrt(each));
+        }
+        return array.toArray(result);
     }
 
     public static Double[] squares(Double... values) {
