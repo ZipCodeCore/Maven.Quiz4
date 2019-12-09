@@ -15,15 +15,18 @@ public class Calculator {
     }
 
     public static Double[] squareRoots(Double... value) {
+
         return null;
     }
 
     public static Double[] squares(Double... values) {
+
         return null;
     }
 
     public static Double add(Double value1, Double value2) {
-        return null;
+
+        return value1 + value2;
     }
 
     public static Double subtract(Double value1, Double value2) {
