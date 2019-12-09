@@ -36,6 +36,10 @@ public class Calculator {
 
 
     public static Double divide(Double divisor, Double dividend) {
-        return null;
+
+        if (dividend == 0){
+            return 0.0;
+        }
+        return divisor/dividend;
     }
 }
