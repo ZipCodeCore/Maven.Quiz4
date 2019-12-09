@@ -1,5 +1,8 @@
 package rocks.zipcode.quiz4.fundamentals;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author leon on 21/12/2018.
  */
@@ -20,8 +23,13 @@ public class Calculator {
     }
 
     public static Double[] squares(Double... values) {
+        List<Double> array = new ArrayList<>();
+        Double[] result = new Double[0];
 
-        return null;
+        for(Double each : values){
+            array.add(each * each);
+        }
+        return array.toArray(result);
     }
 
     public static Double add(Double value1, Double value2) {
