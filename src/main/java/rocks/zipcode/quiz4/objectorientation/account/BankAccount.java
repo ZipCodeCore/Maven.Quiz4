@@ -8,7 +8,7 @@ public class BankAccount extends Account implements Transactable {
     private Double balance;
 
     public BankAccount(){
-        
+        balance = 0.0;
     }
     
     public void setBalance(Double val) {
@@ -17,18 +17,18 @@ public class BankAccount extends Account implements Transactable {
 
     @Override
     public void deposit(Double amountToIncreaseBy){
-
         if(amountToIncreaseBy < 0)
             throw new IllegalArgumentException();
-        balance += amountToIncreaseBy;
+
+        this.balance += amountToIncreaseBy;
     }
 
     @Override
     public void withdrawal(Double amountToDecreaseBy){
-
         if(amountToDecreaseBy > balance || amountToDecreaseBy < 0)
             throw new IllegalArgumentException();
-        balance -= amountToDecreaseBy;
+
+        this.balance -= amountToDecreaseBy;
     }
 
     @Override

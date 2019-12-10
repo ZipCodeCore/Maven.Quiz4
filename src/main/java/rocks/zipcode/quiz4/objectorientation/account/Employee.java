@@ -3,27 +3,25 @@ package rocks.zipcode.quiz4.objectorientation.account;
 /**
  * @author leon on 30/12/2018.
  */
-public class Employee implements Worker {
+public class Employee implements Worker, Transactable{
 
-    private double hoursWorked;
-    private double bankAccountBalance;
-    private double hourlyWage;
-    private double balance;
     private BankAccount bankAccount;
+    private double hoursWorked = 0.0;
+    private double hourlyWage = 35.0;
+
 
     public Employee() {
-        hourlyWage = 35.0;
-        hoursWorked = 0.0;
-        balance = 0.0;
-        bankAccountBalance = 0.0;
+        this.bankAccount = new BankAccount();
+
     }
 
     public Employee(BankAccount bankAccount) {
         this.bankAccount = bankAccount;
     }
 
+
     public BankAccount getBankAccount() {
-        return this.bankAccount;
+        return bankAccount;
     }
 
     public void setBankAccount(BankAccount bankAccount) {
@@ -32,21 +30,37 @@ public class Employee implements Worker {
 
     @Override
     public void increaseHoursWorked(Double numberOfHours) {
-
+        hoursWorked += numberOfHours;
     }
 
     @Override
     public Double getHoursWorked() {
-        return null;
+        return hoursWorked;
     }
 
     @Override
     public Double getHourlyWage() {
-        return null;
+        return hourlyWage;
     }
 
     @Override
     public Double getMoneyEarned() {
-        return null;
+        return hourlyWage * hoursWorked;
+    }
+
+    @Override
+    public void deposit(Double amountToIncreaseBy) {
+        bankAccount.deposit(amountToIncreaseBy);
+    }
+
+    @Override
+    public void withdrawal(Double amountToDecreaseBy) {
+        bankAccount.withdrawal(amountToDecreaseBy);
+
+    }
+
+    @Override
+    public Double getBalance() {
+        return bankAccount.getBalance();
     }
 }
