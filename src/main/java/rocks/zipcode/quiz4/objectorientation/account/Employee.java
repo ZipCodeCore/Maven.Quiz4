@@ -5,7 +5,6 @@ package rocks.zipcode.quiz4.objectorientation.account;
  */
 public class Employee implements Worker,Transactable {
 
-    private Double balance;
     private BankAccount bankAccount;
     private Double hoursWorked;
     private Double hourlyWage;
@@ -14,14 +13,12 @@ public class Employee implements Worker,Transactable {
         this.hourlyWage = 35.0;
         this.hoursWorked = 0.0;
         this.bankAccount = new BankAccount();
-        this.balance = this.bankAccount.getBalance();
     }
 
     public Employee(BankAccount bankAccount) {
         this.hourlyWage = 35.0;
         this.hoursWorked = 0.0;
         this.bankAccount = bankAccount;
-        this.balance = this.bankAccount.getBalance();
     }
 
     public BankAccount getBankAccount() {
@@ -37,19 +34,18 @@ public class Employee implements Worker,Transactable {
     public void deposit(Double amountToIncreaseBy) {
 
         if (amountToIncreaseBy > 0) {
-            this.balance = this.balance + amountToIncreaseBy;
-            this.bankAccount.setBalance(this.balance);
+            this.bankAccount.deposit(amountToIncreaseBy);
         }
     }
 
     @Override
     public void withdrawal(Double amountToDecreaseBy) {
-
+        this.bankAccount.withdrawal(amountToDecreaseBy);
     }
 
     @Override
     public Double getBalance() {
-        return this.balance;
+        return this.bankAccount.getBalance();
     }
 
     @Override
