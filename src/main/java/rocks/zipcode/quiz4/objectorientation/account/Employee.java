@@ -54,6 +54,9 @@ public class Employee implements Worker,Transactable {
 
     @Override
     public void increaseHoursWorked(Double numberOfHours) {
+        if (numberOfHours > 0){
+            this.hoursWorked = this.hoursWorked + numberOfHours;
+        }
     }
 
     @Override
