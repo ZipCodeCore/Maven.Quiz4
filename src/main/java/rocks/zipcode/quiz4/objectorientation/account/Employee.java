@@ -13,14 +13,14 @@ public class Employee implements Worker, Transactable {
         this.bankAccount = new BankAccount();
         this.hoursWorked = 0.0;
         this.hourlyWage = 35.0;
-        this.moneyEarned = 0D;
+        this.moneyEarned = hoursWorked * hourlyWage;
     }
 
     public Employee(BankAccount bankAccount) {
         this.bankAccount = bankAccount;
         this.hoursWorked = 0.0;
         this.hourlyWage = 35.0;
-        this.moneyEarned = 0D;
+        this.moneyEarned = hoursWorked * hourlyWage;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class Employee implements Worker, Transactable {
 
     @Override
     public Double getMoneyEarned() {
-        return hoursWorked * hourlyWage;
+        return moneyEarned;
     }
 
     public BankAccount getBankAccount() {
