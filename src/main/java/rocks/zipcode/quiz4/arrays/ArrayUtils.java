@@ -18,15 +18,6 @@ public class ArrayUtils {
             }
         }
         return newList.toArray(new String[0]);
-
-        /*String[] newArray = new String[values.length - 1];
-        for(int i = 0; i < values.length / 2; i++){
-            newArray[i] = values[i];
-        }
-        for(int i = (values.length / 2) + 1; i < values.length; i++){
-            newArray[i] = values[i + 1];
-        }
-        return newArray;*/
     }
 
     public static String getLastElement(String[] values) {
