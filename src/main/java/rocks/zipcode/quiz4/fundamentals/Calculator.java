@@ -5,31 +5,33 @@ package rocks.zipcode.quiz4.fundamentals;
  */
 public class Calculator {
     public static Double squareRoot(Double value) {
-        return null;
+        return Math.sqrt(value);
     }
 
     public static Double square(Double value) {
-        return null;
+        return value * value;
     }
 
-    public static Double[] squareRoots(Double... value) {
-        return null;
+    public static Double[] squareRoots(Double... values) {
+        for(int i = 0; i < values.length; i++) values[i] = Math.sqrt(values[i]);
+        return values;
     }
 
     public static Double[] squares(Double... values) {
-        return null;
+        for(int i = 0; i < values.length; i++) values[i] = values[i] * values[i];
+        return values;
     }
 
     public static Double add(Double value1, Double value2) {
-        return null;
+        return value1 + value2;
     }
 
     public static Double subtract(Double value1, Double value2) {
-        return null;
+        return value1 - value2;
     }
 
 
     public static Double divide(Double divisor, Double dividend) {
-        return null;
+        return divisor / dividend;
     }
 }
