@@ -12,20 +12,18 @@ public class ArrayUtils {
     }
 
     public static String[] removeMiddleElement(String[] values) {
-//        ArrayList<String> outputArray = new ArrayList<String>();
-//
-//        int midEl = values.length / 2;
-//        int midElMinusOne = values.length / 2 - 1;
-//        for (int i = 0; i < values.length; i++) {
-//            outputArray.add(values[i]);
-//        }
-//        outputArray.remove(midEl);
-//        outputArray.remove(midElMinusOne);
-//
-//        String[] newStr = new String[outputArray];
-//        return newStr;
-//        String[] newArr = Arrays.copyOf(values, values.length-1);
-        return null;
+/*        String[] newArr = new String[values.length-1];
+        int midEl = (values.length -1) / 2  ;
+
+        for (int i = 0; i < values.length-1; i++) {
+            if(values[i] != values[midEl]){
+                newArr[i] = values[i];
+            }
+        }
+        return newArr;*/
+        ArrayList<String> result = new ArrayList<>(Arrays.asList(values));
+        result.remove(result.size()/2);
+        return result.toArray(new String[0]);
     }
 
     public static String getLastElement(String[] values) {

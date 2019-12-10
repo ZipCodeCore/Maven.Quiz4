@@ -7,35 +7,28 @@ import java.util.Arrays;
  */
 public class StringUtils {
     public static Character getMiddleCharacter(String string) {
-//        Character middleChar;
-//        int position;
-//        int length;
-//        if (string.length() % 2 == 0)
-//        {
-//            position = string.length() / 2 - 1;
-//            length = 2;
-//        }
-//        else
-//        {
-//            position = string.length() / 2;
-//            length = 1;
-//        }
-//        return middleChar.substring(position, position + length);
-        return null;
+        char[] newArr = string.toCharArray();
+        Character mid = newArr[newArr.length/2];
+        return mid;
     }
 
     public static String capitalizeMiddleCharacter(String str) {
-//        char[] newStr = new char[0];
 //        for (int i = 0; i < str.length(); i++) {
-//            if(str.length() % 2 == 1)
-//                newStr[i] += str.charAt(i);
-//        }
+//            if(str.indexOf(i) == str.indexOf(str.length()/2)){
+//                str.indexOf(i)
+//            }
 //
-        return null;
+//        }
+//        Character mid = str[str.length/2];
+//        Character x = getMiddleCharacter(mid);
+//        return x.toString().toUpperCase();
+        int index = str.length() / 2;
+        return str.substring(0, index) + Character.toUpperCase(getMiddleCharacter(str)) + str.substring(index + 1);
     }
 
     public static String lowerCaseMiddleCharacter(String str) {
-        return null;
+        int index = str.length() / 2;
+        return str.substring(0, index)+ Character.toLowerCase(getMiddleCharacter(str)) + str.substring(index+1);
     }
 
     public static Boolean isIsogram(String str) {
@@ -52,11 +45,21 @@ public class StringUtils {
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
-        return null;
+        for(int i = 1; i < str.length(); i++){
+            if(str.charAt(i-1) == str.charAt(i))
+                return true;
+        }
+        return false;
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        return null;
+        StringBuilder stringBuilder = new StringBuilder(str);
+        for(int i = 1; i <= str.length()-1; i++){
+            if(str.charAt(i) == str.charAt(i-1)) {
+                stringBuilder.replace(i - 1, i + 1, "");
+            }
+        }
+        return stringBuilder.toString();
     }
 
     public static String invertCasing(String str) {

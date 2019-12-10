@@ -24,21 +24,21 @@ public class Calculator {
     }
 
     public static Double[] squareRoots(Double... value) {
-//        Double[] newArr = new Double[value.length];
-//
-//        for (int i = 0; i < value.length; i++) {
-//            newArr[i] += Math.sqrt(value[i]);
-//        }
-        return null;
+        Double[] newArr = new Double[value.length];
+
+        for (int i = 0; i < value.length; i++) {
+            newArr[i] = Math.sqrt(value[i]);
+        }
+        return newArr;
     }
 
     public static Double[] squares(Double... values) {
-//        Double[] newArr = new Double[values.length];
-//
-//        for (int i = 0; i < values.length; i++) {
-//            newArr[i] += Math.pow(values[i],2);
-//        }
-        return null;
+        Double[] newArr = new Double[values.length];
+
+        for (int i = 0; i < values.length; i++) {
+            newArr[i] = Math.pow(values[i],2);
+        }
+        return newArr;
     }
 
     public static Double add(Double value1, Double value2) {
