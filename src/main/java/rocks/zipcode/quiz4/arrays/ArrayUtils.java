@@ -9,16 +9,16 @@ import java.util.List;
  */
 public class ArrayUtils {
     public static String getMiddleElement(String[] values) {
-        Integer size = values.length;
+        Integer size = values.length -1;
         Integer index = size/2;
         return values[index];
     }
 
     public static String[] removeMiddleElement(String[] values) {
         ArrayList<String> result = new ArrayList<>();
-        for (String s : values) {
-            if (!values.equals(getMiddleElement(values))) {
-                result.add(s);
+        for (int i = 0; i < values.length; i++) {
+            if (values[i] != getMiddleElement(values)) {
+                result.add(values[i]);
             }
         }
         String[] output = new String[result.size()];
@@ -33,10 +33,8 @@ public class ArrayUtils {
 
     public static String[] removeLastElement(String[] values) {
         ArrayList<String> result = new ArrayList<>();
-        for (String s : values) {
-            if (!s.equals(getLastElement(values))) {
-                result.add(s);
-            }
+        for (int i = 0; i < values.length - 1; i++) {
+                result.add(values[i]);
         }
         String[] output = new String[result.size()];
         output = result.toArray(output);
