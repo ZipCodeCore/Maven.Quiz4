@@ -4,14 +4,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class WordCounter {
+
+    String[] strings;
+
     public WordCounter(String... strings) {
+        this.strings = strings;
     }
 
     public Map<String, Integer> getWordCountMap() {
-        WordCounter wordCounter = new WordCounter();
-        HashMap<String, Integer> map = new HashMap<>();
+        Map<String,Integer> map = new HashMap<>();
 
-
-        return null;
+        for(String s : strings) {
+            Integer count = 0;
+            for (int i = 0; i < strings.length; i++) {
+                if(strings[i].equals(s)) {
+                    count++;
+                }
+            }
+            map.put(s,count);
+        }
+        return map;
     }
 }

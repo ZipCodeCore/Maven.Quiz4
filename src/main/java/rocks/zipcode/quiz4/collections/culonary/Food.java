@@ -16,5 +16,6 @@ public class Food {
     }
 
     public void applySpice(Spice spice) {
+
     }
 }
