@@ -55,7 +55,12 @@ public class StringUtils {
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
-        return null;
+
+        for (int i = 0; i < str.length() - 1; i++) {
+            if (str.charAt(i) == str.charAt(i + 1))
+                return true;
+        }
+        return false;
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
