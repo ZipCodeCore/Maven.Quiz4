@@ -1,22 +1,34 @@
 package rocks.zipcode.quiz4.arrays;
 
+import java.util.ArrayList;
+
 /**
  * @author leon on 01/01/2019.
  */
 public class ArrayUtils {
     public static String getMiddleElement(String[] values) {
-        return null;
+        return values[values.length/2];
     }
 
     public static String[] removeMiddleElement(String[] values) {
-        return null;
+        String[] output = new String[values.length-1];
+        int count = 0;
+        for(String element : values){
+            if (!element.equals(getMiddleElement(values))){
+                output[count] = element;
+                count++;
+            }
+        }
+        return output;
     }
 
     public static String getLastElement(String[] values) {
-        return null;
+        return values[values.length-1];
     }
 
     public static String[] removeLastElement(String[] values) {
-        return null;
+        String[] output = new String[values.length-1];
+        for(int i = 0; i < values.length-1; i++) output[i] = values[i];
+        return output;
     }
 }
