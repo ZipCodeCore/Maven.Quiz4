@@ -8,38 +8,59 @@ import java.util.List;
  */
 public class Calculator {
     public static Double squareRoot(Double value) {
-        return null;
+
+        double temp;
+        double sr = value / 2;
+
+        do {
+            temp = sr;
+            sr = (temp + (value / temp)) / 2;
+        } while ((temp - sr) != 0);
+
+        return sr;
     }
 
+    //pass
     public static Double square(Double value) {
         return value * value;
     }
 
     public static Double[] squareRoots(Double... value) {
-        return null;
-    }
 
-    public static Double[] squares(Double... values) {
-
+        Double[] result = new Double[value.length];
         int count = 0;
-        for(int i = 0; i < values.length; i++){
-            values[count] += values[i*i];
+
+        for (Double num : value){
+            result[count] = squareRoot(num);
             count++;
         }
-
-        return values;
+        return result;
     }
 
+    //pass
+    public static Double[] squares(Double... values) {
+
+        Double[] result = new Double[values.length];
+        int count = 0;
+
+        for (Double value : values){
+                result[count] = value * value;
+                count++;
+        }
+        return result;
+    }
+
+    //pass
     public static Double add(Double value1, Double value2) {
-        return null;
+        return value1 + value2;
     }
-
+    //pass
     public static Double subtract(Double value1, Double value2) {
-        return null;
+        return value1 - value2;
     }
 
-
+    //pass
     public static Double divide(Double divisor, Double dividend) {
-        return null;
+        return divisor / dividend;
     }
 }
