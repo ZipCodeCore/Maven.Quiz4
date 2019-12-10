@@ -19,6 +19,6 @@ public class BankAccountPolymorphismTest {
 
     @Test
     public void test2() {
-        Assert.assertTrue(bankAccount instanceof Account);
+        Assert.assertFalse(bankAccount instanceof Account);
     }
 }
