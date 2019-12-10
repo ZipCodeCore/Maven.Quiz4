@@ -1,10 +1,8 @@
 package rocks.zipcode.quiz4.fundamentals;
 
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -48,31 +46,19 @@ public class StringUtils {
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        StringBuilder sb = new StringBuilder();
-        Character toRemove = null;
-        String newStr = "";
-        sb.append(str);
-        for (int i = 0; i < str.length() - 1; i++) {
-            if (str.charAt(i) == str.charAt(i + 1))
-                toRemove = str.charAt(i);
-                newStr = newStr + removeCharacter(str, toRemove);
-                sb.append(i+1);
-        }
-
-//        return Arrays.stream(sb.toCharArray()).filter(c -> !c.equals("0")).collect(Collectors.toList()).toString();
-        return sb.toString();
-    }
-
-    public static String removeCharacter(String value, Character charToRemove) {
-        StringBuilder builderValue = new StringBuilder();
-        String strWithCharRemoved = "";
-        for(int i = 0; i < value.length(); i++) {
-            if(value.charAt(i) != charToRemove) {
-                builderValue.append(value.charAt(i));
+        String[] charArray = str.split("");
+        for (int i = 0; i < charArray.length - 1; i++) {
+            if (charArray[i].equals(charArray[i + 1])) {
+                charArray[i] = "0";
+                charArray[i+1] ="0";
             }
-            strWithCharRemoved = builderValue.toString();
         }
-        return strWithCharRemoved;
+        List<String> result = Arrays.stream(charArray).filter(c -> !c.equals("0")).collect(Collectors.toList());
+        StringBuilder sb = new StringBuilder();
+        for (String s : result) {
+            sb.append(s);
+        }
+        return sb.toString();
     }
 
     public static String invertCasing(String str) {

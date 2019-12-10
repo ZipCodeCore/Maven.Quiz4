@@ -6,8 +6,7 @@ package rocks.zipcode.quiz4.objectorientation.account;
 public class Account {
     private Long id;
 
-    public Account(Long id) {
-        this.id = id;
+    public Account() {
     }
 
     public Long getId() {
