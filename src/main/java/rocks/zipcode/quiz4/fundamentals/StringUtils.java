@@ -48,6 +48,12 @@ public class StringUtils {
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
+
+
+
+
+
+
         String[] strArray = str.split("");
         for (int i = str.length()-1; i >=1; i--) {
             if (strArray[i].equals(strArray[i - 1])) {
@@ -79,17 +85,36 @@ public class StringUtils {
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
+        String [] strArray = str.split ("");
+        int j=0;
         StringBuilder sb = new StringBuilder();
-        String[] strArray = str.split("");
-        for (int i = 0; i < strArray.length - 1; i++) {
-            if (!strArray[i].equals(strArray[i + 1])) {
-                sb.append(strArray[i]);
-            }
-            else {
-                continue;
+        for (int i = 1; i< strArray.length; i++) {
+
+            if (strArray[j] != strArray[i])
+            {
+                j++;
+                strArray[j] = strArray[i];
             }
         }
+        String[] copy = Arrays.copyOfRange(strArray, 0, j+1);
+        for (int i = 0; i < copy.length; i++) {
+            sb.append(copy[i]);
+        }
         return sb.toString();
+
+
+
+//        StringBuilder sb = new StringBuilder();
+//        String[] strArray = str.split("");
+//        for (int i = 0; i < strArray.length - 1; i++) {
+//            if (!strArray[i].equals(strArray[i + 1])) {
+//                sb.append(strArray[i]);
+//            }
+//            else {
+//                continue;
+//            }
+//        }
+//        return sb.toString();
     }
 
 

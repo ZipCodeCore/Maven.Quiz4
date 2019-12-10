@@ -9,7 +9,6 @@ public class WordCounter {
     }
 
     public Map<String, Integer> getWordCountMap() {
-        strings.split(" ")
         return null;
     }
 }
