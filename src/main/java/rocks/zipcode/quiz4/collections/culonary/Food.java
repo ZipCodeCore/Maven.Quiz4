@@ -12,7 +12,8 @@ public class Food {
     }
 
     public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
-        return null;
+        Map<SpiceType, Integer> spiceCount = null;
+        return spiceCount;
     }
 
     public void applySpice(Spice spice) {
