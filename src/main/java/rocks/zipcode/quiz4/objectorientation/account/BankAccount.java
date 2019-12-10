@@ -14,9 +14,10 @@ public class BankAccount extends Account implements Transactable {
         this.balance = val;
     }
 
+    @Override
     public void deposit(Double val) {
-        if (val > 0) this.setBalance(this.getBalance()+val);
-        else throw new IllegalArgumentException();
+        if (val < 0) throw new IllegalArgumentException();
+        else this.setBalance(this.getBalance()+val);
     }
 
     @Override
