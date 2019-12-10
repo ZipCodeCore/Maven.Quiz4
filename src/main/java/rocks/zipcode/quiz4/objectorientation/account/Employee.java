@@ -9,6 +9,8 @@ public class Employee implements Transactable, Worker {
     private double hourlyWage;
 
     public Employee() {
+        this.hourlyWage = 35.0;
+        this.numberOfHoursWorked = 0.0;
         this.bankAccount = new BankAccount();
     }
 
@@ -53,7 +55,7 @@ public class Employee implements Transactable, Worker {
 
     @Override
     public Double getHourlyWage() {
-        return this.numberOfHoursWorked * hourlyWage;
+        return hourlyWage;
     }
 
     @Override
