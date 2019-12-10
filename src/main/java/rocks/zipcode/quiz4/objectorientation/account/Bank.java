@@ -15,9 +15,9 @@ public class Bank {
 
         if (bankAccounts.size() > 0 && indexNumber <= bankAccounts.size()){
             temp = bankAccounts.get(indexNumber);
-            bankAccounts.remove(indexNumber);
+            bankAccounts.remove(temp);
         }
-        return bankAccounts.contains(temp);
+        return containsBankAccount(temp);
     }
 
     public void addBankAccount(BankAccount bankAccount) {
