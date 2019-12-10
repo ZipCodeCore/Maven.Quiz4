@@ -9,22 +9,16 @@ import java.util.List;
 public class Bank {
     ArrayList<BankAccount> accounts;
 
-
-
-
     public Bank(){
         this.accounts = new ArrayList<>();
     }
 
-    public Bank(ArrayList<BankAccount> accounts) {
-        this.accounts = accounts;
-    }
 
 
-    public void removeBankAccountByIndex(Integer indexNumber) {
+    public BankAccount removeBankAccountByIndex(Integer indexNumber) {
         this.accounts.remove(indexNumber);
+        return null;
     }
-
     public void addBankAccount(BankAccount bankAccount) {
         this.accounts.add(bankAccount);
     }

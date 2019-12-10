@@ -13,8 +13,8 @@ public class ArrayUtils {
         for (int i = 0; i < values.length / 2; i++) {
             newArray[i] = values[i];
         }
-        for (int i = (values.length/2)+1; i < newArray.length; i++) {
-            newArray[i-1] = values[i];
+        for (int i = (values.length/2); i < newArray.length; i++) {
+            newArray[i] = values[i+1];
         }
         return newArray;
     }
