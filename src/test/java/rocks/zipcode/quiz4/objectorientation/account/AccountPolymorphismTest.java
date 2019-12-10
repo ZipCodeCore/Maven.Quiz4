@@ -10,11 +10,11 @@ public class AccountPolymorphismTest {
     private Object account = new Account();
     @Test
     public void test1() {
-        Assert.assertFalse(account instanceof Transactable);
+        Assert.assertTrue(account instanceof Transactable);
     }
 
     @Test
     public void test2() {
-        Assert.assertFalse(account instanceof BankAccount);
+        Assert.assertTrue(account instanceof BankAccount);
     }
 }
