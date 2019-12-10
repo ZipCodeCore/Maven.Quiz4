@@ -16,8 +16,8 @@ public class WordCounter {
 
         for(String s : strings) {
             Integer count = 0;
-            for (int i = 0; i < strings.length; i++) {
-                if(strings[i].equals(s)) {
+            for (String string : strings) {
+                if (string.equals(s)) {
                     count++;
                 }
             }
