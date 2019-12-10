@@ -1,7 +1,6 @@
 package rocks.zipcode.quiz4.fundamentals;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author leon on 21/12/2018.
@@ -64,7 +63,22 @@ public class StringUtils {
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        return null;
+        String result = str;
+
+        for (int i = 0; i < str.length() - 1; i++){
+            if (str.charAt(i) == str.charAt(i+1)){
+                result = removedChars(str,str.charAt(i));
+            }
+        }
+        return result;
+    }
+
+    private static String removedChars(String str, Character charToRemove){
+        String result = str;
+
+        result = result.replace(charToRemove.toString(), "");
+
+        return result;
     }
 
     public static String invertCasing(String str) {
