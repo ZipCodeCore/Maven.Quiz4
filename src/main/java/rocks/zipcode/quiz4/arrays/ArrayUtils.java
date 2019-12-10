@@ -28,7 +28,7 @@ public class ArrayUtils {
         return out;
     }
 
-    private static Integer middleIndex(Integer len) {
+    public static Integer middleIndex(Integer len) {
         return (len - (len % 2)) / 2;
     }
 }
