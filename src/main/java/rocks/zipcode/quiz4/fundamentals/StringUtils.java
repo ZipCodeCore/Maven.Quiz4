@@ -13,8 +13,8 @@ public class StringUtils {
     public static String capitalizeMiddleCharacter(String str) {
         String result = "";
 
-        for (int i = 0; i < str.length(); i++){
-            if (i == str.length()/2) {
+        for (int i = 0; i < str.length(); i++) {
+            if (i == str.length() / 2) {
                 result = result.concat(String.valueOf(str.toUpperCase().charAt(i)));
             } else {
                 result = result.concat(String.valueOf(str.charAt(i)));
@@ -27,8 +27,8 @@ public class StringUtils {
     public static String lowerCaseMiddleCharacter(String str) {
         String result = "";
 
-        for (int i = 0; i < str.length(); i++){
-            if (i == str.length()/2) {
+        for (int i = 0; i < str.length(); i++) {
+            if (i == str.length() / 2) {
                 result = result.concat(String.valueOf(str.toLowerCase().charAt(i)));
             } else {
                 result = result.concat(String.valueOf(str.charAt(i)));
@@ -51,6 +51,21 @@ public class StringUtils {
     }
 
     public static String invertCasing(String str) {
-        return null;
+        String[] temp = str.split("");
+        String result = "";
+
+        for (int i = 0; i < temp.length; i++) {
+            if (temp[i].toUpperCase().equals(temp[i])) {
+                temp[i] = temp[i].toLowerCase();
+                result = result.concat(temp[i]);
+            } else if (temp[i].toLowerCase().equals(temp[i])) {
+                temp[i] = temp[i].toUpperCase();
+                result = result.concat(temp[i]);
+            } else {
+                result = result.concat(temp[i]);
+            }
+        }
+
+        return result;
     }
 }
