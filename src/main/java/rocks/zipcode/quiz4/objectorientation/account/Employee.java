@@ -27,7 +27,6 @@ public class Employee implements Worker, Transactable {
     public void increaseHoursWorked(Double numberOfHours) {
         hoursWorked += numberOfHours;
     }
-
     @Override
     public Double getHoursWorked() {
         return hoursWorked;
@@ -49,7 +48,6 @@ public class Employee implements Worker, Transactable {
 
     public void setBankAccount(BankAccount bankAccount) {
         this.bankAccount = bankAccount;
-
     }
 
     @Override

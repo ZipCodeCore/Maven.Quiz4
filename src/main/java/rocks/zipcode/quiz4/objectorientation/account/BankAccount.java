@@ -27,7 +27,7 @@ public class BankAccount extends Account implements Transactable {
 
     @Override
     public void withdrawal(Double amountToDecreaseBy) {
-        if(amountToDecreaseBy <= balance && amountToDecreaseBy >=0)
+        if(amountToDecreaseBy >=0 && amountToDecreaseBy <= balance)
             balance -= amountToDecreaseBy;
         else
             throw new IllegalArgumentException();

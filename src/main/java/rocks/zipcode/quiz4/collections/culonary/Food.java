@@ -1,6 +1,7 @@
 package rocks.zipcode.quiz4.collections.culonary;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -20,8 +21,20 @@ public class Food {
     }
 
     public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
-//        spices.stream().collect(Collectors.groupingBy(Spice::getClass),Collectors.counting());
-        return null;
+        Map<SpiceType, Integer> map = new HashMap<>();
+        SpiceType spiceType;
+
+        for (Spice spice: spices) {
+            spiceType = (SpiceType) spice.getClass();
+            if (!map.containsKey(spiceType)) {  // first time we've seen this string
+                map.put(spiceType, 1);
+            }
+            else {
+                int count = map.get(spiceType);
+                map.put(spiceType, count + 1);
+            }
+        }
+        return map;
     }
 
     public void applySpice(Spice spice) {
