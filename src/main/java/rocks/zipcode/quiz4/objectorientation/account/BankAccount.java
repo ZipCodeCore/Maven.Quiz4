@@ -1,5 +1,7 @@
 package rocks.zipcode.quiz4.objectorientation.account;
 
+import static java.lang.Math.abs;
+
 /**
  * @author leon on 27/12/2018.
  */
@@ -13,11 +15,16 @@ public class BankAccount extends Account implements Transactable{
 
     @Override
     public void deposit(Double amountToIncreaseBy) {
-        accountBalance =+ amountToIncreaseBy;
+        if (amountToIncreaseBy < 0) throw  new IllegalArgumentException();
+
+        accountBalance += amountToIncreaseBy;
     }
 
     @Override
     public void withdrawal(Double amountToDecreaseBy) {
+        if (abs(amountToDecreaseBy) > this.accountBalance || this.accountBalance == 0){
+            throw new IllegalArgumentException();
+        }
         accountBalance -= amountToDecreaseBy;
     }
 
