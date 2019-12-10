@@ -23,6 +23,7 @@ public class Food {
 
     public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
         Map<SpiceType,Integer> map = new HashMap<>();
+        ArrayList<SpiceType> spiceTypes = new ArrayList<>();
 
         for(Spice s: spices){
             Integer count = 0;
@@ -31,7 +32,6 @@ public class Food {
                     count++;
                 }
             }
-
             //map.put(s,count);
         }
         return map;
