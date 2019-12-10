@@ -1,5 +1,8 @@
 package rocks.zipcode.quiz4.fundamentals;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @author leon on 21/12/2018.
  */
@@ -39,7 +42,16 @@ public class StringUtils {
     }
 
     public static Boolean isIsogram(String str) {
-        return null;
+
+        Set<Character> unique = new HashSet<>();
+        for (Character c : str.toCharArray()) {
+            unique.add(c);
+        }
+        if (unique.size() == str.length()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
