@@ -37,7 +37,7 @@ public class Employee implements Worker,Transactable {
     public void deposit(Double amountToIncreaseBy) {
 
         if (amountToIncreaseBy > 0) {
-            this.balance = +amountToIncreaseBy;
+            this.balance = this.balance + amountToIncreaseBy;
             this.bankAccount.setBalance(this.balance);
         }
     }
@@ -54,7 +54,6 @@ public class Employee implements Worker,Transactable {
 
     @Override
     public void increaseHoursWorked(Double numberOfHours) {
-
     }
 
     @Override
