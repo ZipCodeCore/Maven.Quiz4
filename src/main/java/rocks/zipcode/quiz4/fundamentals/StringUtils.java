@@ -44,14 +44,17 @@ public class StringUtils {
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        StringBuilder stringBuilder = new StringBuilder(str);
-        for(int i = 1; i < str.length(); i++){
-            if(str.charAt(i) == str.charAt(i-1)) {
-                stringBuilder.replace(i - 1, i + 1, "");
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i< str.length()-1; i++){
+            if(str.charAt(i) == str.charAt(i+1)){
+                i++;
+            }
+            else {
+                sb.append(str.charAt(i));
             }
         }
-
-        return stringBuilder.toString();
+        sb.append(str.charAt(str.length()-1));
+        return sb.toString();
     }
 
     public static String invertCasing(String str) {
