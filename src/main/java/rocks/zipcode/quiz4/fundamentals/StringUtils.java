@@ -37,13 +37,10 @@ public class StringUtils {
     }
 
     public static Boolean isIsogram(String str) {
-        str = str.toLowerCase();
-        int length = str.length();
-
         char arr[] = str.toCharArray();
 
         Arrays.sort(arr);
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < str.length() - 1; i++) {
             if (arr[i] == arr[i + 1]) {
                 return false;
             }
