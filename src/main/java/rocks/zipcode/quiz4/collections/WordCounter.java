@@ -17,18 +17,18 @@ public class WordCounter {
         int counter = 0;
         int temp = 1;
         HashMap<String, Integer> wordMap = new HashMap<>();
-        for (int i = 0; i < this.strings.length - 1; i++) {
-            for (int j = i + 1; j < strings.length; j++) {
-                if (wordMap.get(strings[j]).equals(null)) {
-                    wordMap.put(strings[j], 1);
-                }
-                else {
-                    temp = wordMap.get(strings[j]);
-                    temp++;
-                    wordMap.put(this.strings[i], temp);
-            }
+        for (int i = 0; i < this.strings.length; i++) {
+
+            if (!wordMap.containsKey(strings[i])) {
+                temp = 1;
+                wordMap.put(strings[i], temp);
+            } else {
+                temp = wordMap.get(strings[i]);
+                temp++;
+                wordMap.replace(this.strings[i], temp);
             }
         }
+
         return wordMap;
     }
 }
