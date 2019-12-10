@@ -83,12 +83,11 @@ public class StringUtils {
 
     public static String invertCasing(String str) {
         String result = "";
-        for(int i = 0 ;i < str.length(); i++){
-            if(str.charAt(i) == Character.toUpperCase(str.charAt(i))){
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == Character.toUpperCase(str.charAt(i))) {
                 result = result + Character.toLowerCase(str.charAt(i));
-            }
-            else
-                result = result +Character.toUpperCase(str.charAt(i));
+            } else
+                result = result + Character.toUpperCase(str.charAt(i));
         }
         return result;
     }
