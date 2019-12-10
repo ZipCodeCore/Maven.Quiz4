@@ -11,7 +11,7 @@ import java.util.Map;
 public class Food <SpiceType extends Class<? extends Spice>>{
 
     private ArrayList<Spice> allSpices = new ArrayList<>();
-    private HashMap<SpiceType, Integer> spiceCountMap;
+    private HashMap<SpiceType, Integer> spiceCountMap = new HashMap<>();
 
     public List<Spice> getAllSpices() {
         return allSpices;
@@ -22,6 +22,13 @@ public class Food <SpiceType extends Class<? extends Spice>>{
     }
 
     public void applySpice(Spice spice) {
+        // STICK IT IN THE ArrayList
         allSpices.add(spice);
+        // THEN STICK IT IN THE HashMap
+        if (!spiceCountMap.keySet().contains((SpiceType)spice.getClass())) {
+            spiceCountMap.put((SpiceType) spice.getClass(), 1);
+        }
+        else {spiceCountMap.replace((SpiceType)spice.getClass(), spiceCountMap.get((SpiceType)spice.getClass())+1);}
     }
+
 }
