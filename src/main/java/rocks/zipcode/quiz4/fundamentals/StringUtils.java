@@ -67,7 +67,7 @@ public class StringUtils {
 
         for (int i = 0; i < str.length() - 1; i++){
             if (str.charAt(i) == str.charAt(i+1)){
-                result = removedChars(str,str.charAt(i));
+                result = removedChars(result,str.charAt(i));
             }
         }
         return result;
