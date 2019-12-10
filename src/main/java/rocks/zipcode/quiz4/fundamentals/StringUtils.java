@@ -1,5 +1,6 @@
 package rocks.zipcode.quiz4.fundamentals;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -25,7 +26,11 @@ public class StringUtils {
     }
 
     public static Boolean isIsogram(String str) {
-        Set set = new HashSet(Arrays.asList(str.toCharArray()));
+        char[] chars = str.toCharArray();
+        Set<Character> set = new HashSet<Character>();
+        for(char ch : chars) {
+            set.add(ch);
+        }
         if(set.size() == str.length()){
             return true;
         }else return false;
