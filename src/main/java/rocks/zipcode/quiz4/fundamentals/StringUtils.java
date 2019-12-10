@@ -1,6 +1,5 @@
 package rocks.zipcode.quiz4.fundamentals;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -38,7 +37,6 @@ public class StringUtils {
 
     public static Boolean isIsogram(String str) {
         char arr[] = str.toCharArray();
-
         Arrays.sort(arr);
         for (int i = 0; i < str.length() - 1; i++) {
             if (arr[i] == arr[i + 1]) {
