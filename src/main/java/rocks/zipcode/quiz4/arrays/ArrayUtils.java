@@ -35,11 +35,20 @@ public class ArrayUtils {
     }
 
     public static String[] removeLastElement(String[] values) {
-        String last = getLastElement(values);
-        ArrayList<String> al = new ArrayList<>(Arrays.asList(values));
-        List<String> newList = al.stream().filter(x -> !x.equals(last)).collect(Collectors.toList());
-        String[] result = new String[newList.size()];
-        newList.toArray(result);
+       // String last = getLastElement(values);
+
+
+        ArrayList<String> al = new ArrayList<>();
+        for(int i=0 ;i < values.length; i++){
+            al.add(values[i]);
+        }
+        al.remove(al.size()-1);
+        String[] result = new String[al.size()];
+        al.toArray(result);
         return result;
+//        List<String> newList = al.stream().filter(x -> !x.equals(last)).collect(Collectors.toList());
+//        String[] result = new String[newList.size()];
+//        newList.toArray(result);
+//        return result;
     }
 }

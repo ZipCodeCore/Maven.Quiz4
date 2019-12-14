@@ -7,4 +7,5 @@ public interface Transactable {
     void deposit(Double amountToIncreaseBy);
     void withdrawal(Double amountToDecreaseBy);
     Double getBalance();
+    void setBalance(Double balance);
 }

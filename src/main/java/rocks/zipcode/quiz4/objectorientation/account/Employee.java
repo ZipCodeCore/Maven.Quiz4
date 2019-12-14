@@ -4,33 +4,21 @@ package rocks.zipcode.quiz4.objectorientation.account;
  * @author leon on 30/12/2018.
  */
 public class Employee implements Worker, Transactable {
-    Double hourlyWage;
-    Double hoursWorked ;
-    Double balance ;
-    Double bankAccountBalance ;
-    //Double moneyEarned = hourlyWage * hoursWorked;
-     BankAccount bankAccount = new BankAccount();
-    public Employee(Double hourlyWage, Double hoursWorked, Double balance, Double bankAccountBalance)
-    {
-        this.hourlyWage = hourlyWage;
-        this.hoursWorked =hoursWorked;
-        this.balance = hourlyWage;
-        this.bankAccountBalance = bankAccountBalance;
-       //this.moneyEarned = hourlyWage * hoursWorked;
-       // BankAccount bankAccount = new BankAccount();
-    }
-
-    public Employee() {
-        this.hourlyWage = 35.0;
-        this.hoursWorked = 0.0;
-        this.balance = 15.0;
-        this.bankAccountBalance = bankAccountBalance;
-    }
+    private BankAccount bankAccount;
+    private double hourlyWage;
+    private double hoursWorked ;
+    private double balace;
 
     public Employee(BankAccount bankAccount) {
-        this.bankAccount = bankAccount;
-    }
+       this.bankAccount = bankAccount;
+       this.hourlyWage =35;
+     }
+    public Employee(){
+        bankAccount = new BankAccount();
+        this.hourlyWage = 35.0;
+        this.hoursWorked = 0.0;
 
+    }
     public BankAccount getBankAccount() {
         return this.bankAccount;
     }
@@ -41,20 +29,22 @@ public class Employee implements Worker, Transactable {
 
     @Override
     public void deposit(Double amountToIncreaseBy) {
-        if(amountToIncreaseBy >= 0)
-        this.bankAccountBalance+= amountToIncreaseBy;
-        else
-            throw new IllegalArgumentException();
+       this.bankAccount.deposit(amountToIncreaseBy);
     }
 
     @Override
     public void withdrawal(Double amountToDecreaseBy) {
-    bankAccount.withdrawal(amountToDecreaseBy);
+    this.bankAccount.withdrawal(amountToDecreaseBy);
     }
 
     @Override
     public Double getBalance() {
         return this.bankAccount.getBalance();
+    }
+
+    @Override
+    public void setBalance(Double balance) {
+        this.balace = balance;
     }
 
     @Override
@@ -75,5 +65,13 @@ public class Employee implements Worker, Transactable {
     @Override
     public Double getMoneyEarned() {
         return  hourlyWage * hoursWorked;
+    }
+
+    public void setHourlyWage(double hourlyWage) {
+        this.hourlyWage = hourlyWage;
+    }
+
+    public void setHoursWorked(double hoursWorked) {
+        this.hoursWorked = hoursWorked;
     }
 }

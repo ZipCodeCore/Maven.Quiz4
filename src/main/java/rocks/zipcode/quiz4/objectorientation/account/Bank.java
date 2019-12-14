@@ -12,10 +12,16 @@ public Bank(){
     bankAccountList = new ArrayList<>();
 }
 
+    public List<BankAccount> getBankAccountList() {
+        return bankAccountList;
+    }
 
+    public void setBankAccountList(List<BankAccount> bankAccountList) {
+        this.bankAccountList = bankAccountList;
+    }
 
     public BankAccount removeBankAccountByIndex(Integer indexNumber) {
-
+      bankAccountList.remove(bankAccountList.get(indexNumber));
 
 
 
@@ -23,9 +29,9 @@ public Bank(){
     }
 
     public void addBankAccount(BankAccount bankAccount) {
-        if (!bankAccountList.contains(bankAccount)) {
+
             bankAccountList.add(bankAccount);
-        }
+
 
     }
     public Boolean containsBankAccount(BankAccount bankAccount) {
@@ -33,7 +39,7 @@ public Bank(){
             return true;}
             else
 
-            throw new UnsupportedOperationException("Method not yet implemented");
+            return false;
         }
     }
 
