@@ -47,7 +47,7 @@ public class Employee implements Worker, Transactable {
 
     @Override
     public void deposit(Double amountToIncreaseBy) throws IllegalArgumentException{
-        if (amountToIncreaseBy <= 0) {
+        if (amountToIncreaseBy < 0) {
             throw new IllegalArgumentException ();
         }
         else {

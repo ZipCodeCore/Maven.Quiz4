@@ -7,7 +7,7 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class WordCounter {
-    //String [] strings;
+
     Map<String, Long> wordCounts = new HashMap<>();
     Map<String, Integer> newMap = new HashMap<>();
 
@@ -20,6 +20,13 @@ public class WordCounter {
     }
 
     //Write method for using a loop also.
+//    HashMap<String,int> frequencymap = new HashMap<String,int>();
+//    foreach(String a in animals) {
+//        if(frequencymap.containsKey(a)) {
+//            frequencymap.put(a, frequencymap.get(a)+1);
+//        }
+//        else{ frequencymap.put(a, 1); }
+//    }
 
     public Map<String, Integer> getWordCountMap(String... strings) {
         return newMap;
