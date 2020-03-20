@@ -9,7 +9,7 @@ public class Calculator {
     }
 
     public static Double square(Double value) {
-        return null;
+        return value * value;
     }
 
     public static Double[] squareRoots(Double... value) {
@@ -21,15 +21,16 @@ public class Calculator {
     }
 
     public static Double add(Double value1, Double value2) {
-        return null;
+        return value1 + value2;
     }
 
     public static Double subtract(Double value1, Double value2) {
-        return null;
+        return value1 - value2;
     }
 
 
+
     public static Double divide(Double divisor, Double dividend) {
-        return null;
+        return divisor / dividend;
     }
 }
