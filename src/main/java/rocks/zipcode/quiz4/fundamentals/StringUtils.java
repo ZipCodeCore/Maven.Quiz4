@@ -5,15 +5,18 @@ package rocks.zipcode.quiz4.fundamentals;
  */
 public class StringUtils {
     public static Character getMiddleCharacter(String string) {
-        int mid = string.length() / 2;
-        for (int i = mid; i < string.length(); i++) {
-            return string.charAt(i);
+        if (string.length() % 2 == 0){
+            return string.charAt((string.length()/2)-1);
+        }else {
+            return string.charAt(string.length()/2);
         }
-        return null;
     }
 
     public static String capitalizeMiddleCharacter(String str) {
-        return null;
+        String result = "";
+        result = getMiddleCharacter(str).toString().toUpperCase();
+
+        return str.substring(0, str.length()/2) + result + str.substring((str.length()/2 +1));
     }
 
     public static String lowerCaseMiddleCharacter(String str) {
@@ -37,7 +40,6 @@ public class StringUtils {
             }
         return false;
     }
-
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
 
