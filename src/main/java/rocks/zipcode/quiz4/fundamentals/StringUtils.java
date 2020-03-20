@@ -1,5 +1,7 @@
 package rocks.zipcode.quiz4.fundamentals;
 
+import java.util.Arrays;
+
 /**
  * @author leon on 21/12/2018.
  */
@@ -29,7 +31,13 @@ public class StringUtils {
     }
 
     public static Boolean isIsogram(String str) {
-        return null;
+        char arr[] = str.toCharArray();
+        Arrays.sort(arr);
+        for(int i = 0; i < str.length()-1; i++){
+            if(arr[i] == arr[i +1])
+                return false;
+        }
+        return true;
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
