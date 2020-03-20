@@ -3,7 +3,7 @@ package rocks.zipcode.quiz4.objectorientation.account;
 /**
  * @author leon on 30/12/2018.
  */
-public interface Worker {
+public interface Worker extends Transactable {
     void increaseHoursWorked(Double numberOfHours);
     Double getHoursWorked();
     Double getHourlyWage();
