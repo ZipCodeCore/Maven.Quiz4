@@ -70,7 +70,14 @@ public class StringUtils {
 
     public static String invertCasing(String str) {
         StringBuilder result = new StringBuilder((str.length()));
-        //for (char c : )
-        return null;
+        for (char c :  str.toCharArray()){
+            if (Character.isUpperCase(c)) {
+                c = Character.toLowerCase(c);
+            }else if(Character.isLowerCase(c)){
+                c = Character.toUpperCase(c);
+            }
+            result.append(c);
+        }
+        return result.toString();
     }
 }
