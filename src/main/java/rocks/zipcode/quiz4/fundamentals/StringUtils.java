@@ -13,14 +13,19 @@ public class StringUtils {
 
         char[] arr = str.toCharArray();
         int i = arr.length/2;
-        arr[i]= Character.toUpperCase(arr[0]);
+        arr[i]= Character.toUpperCase(arr[i]);
         String result = new String(arr);
 
         return result;
     }
 
     public static String lowerCaseMiddleCharacter(String str) {
-        return null;
+        char[] arr = str.toCharArray();
+        int i = arr.length/2;
+        arr[i]= Character.toLowerCase(arr[i]);
+        String result = new String(arr);
+
+        return result;
     }
 
     public static Boolean isIsogram(String str) {
