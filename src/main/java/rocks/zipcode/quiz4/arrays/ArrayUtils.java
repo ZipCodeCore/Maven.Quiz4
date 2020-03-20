@@ -13,7 +13,7 @@ public class ArrayUtils {
     }
 
     public static String[] removeMiddleElement(String[] values) {
-//        int remove = getMiddleElement(values);
+//        getMiddleElement(values);
 //        String[] result = new String[values.length- 1];
 
 

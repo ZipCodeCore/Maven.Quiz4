@@ -46,23 +46,9 @@ public class StringUtils {
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-//        char[] strA = str.toCharArray();
-//        char prev = '\0';
-//        int k = 0;
-//
-//        for (int i = 0; i < str.length(); i++)
-//        {
-//
-//            if (prev != strA[i]) {
-//                strA[k++] = strA[i];
-//                prev = strA[i];
-//            }
-//        }
-        StringBuilder sb = new StringBuilder();
-        str.chars().distinct().forEach(c -> sb.append((char) c));
-        String result = sb.toString();
 
-        return result;
+
+        return str.replaceAll("(.)(\\1)+", "");
 
     }
 
