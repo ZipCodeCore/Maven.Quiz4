@@ -28,11 +28,32 @@ public class StringUtils {
     }
 
     public static String lowerCaseMiddleCharacter(String str) {
-        return null;
+        String newString = "";
+        String[] newArray = str.split("");
+        Integer middle = newArray.length/2;
+        int count = 0;
+        for(String letter : newArray){
+            if(count == middle){
+                newString += getMiddleCharacter(str).toString().toLowerCase();
+            }
+            else{
+                newString += letter;
+            }
+            count++;
+        }
+        return newString;
     }
 
     public static Boolean isIsogram(String str) {
-        return null;
+        String[] newArray = str.split("");
+        for(int i = 0; i < newArray.length; i++){
+            for(int j = 1; j <newArray.length; i++){
+                if(newArray[i] == newArray[j]){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
