@@ -1,5 +1,7 @@
 package rocks.zipcode.quiz4.arrays;
 
+import java.util.Arrays;
+
 /**
  * @author leon on 01/01/2019.
  */
@@ -28,6 +30,7 @@ public class ArrayUtils {
     }
 
     public static String[] removeLastElement(String[] values) {
-        return null;
+
+        return values = Arrays.copyOfRange(values,0,values.length-1);
     }
 }
