@@ -10,7 +10,13 @@ public class StringUtils {
     }
 
     public static String capitalizeMiddleCharacter(String str) {
-        return null;
+
+        char[] arr = str.toCharArray();
+        int i = arr.length/2;
+        arr[i]= Character.toUpperCase(arr[0]);
+        String result = new String(arr);
+
+        return result;
     }
 
     public static String lowerCaseMiddleCharacter(String str) {
