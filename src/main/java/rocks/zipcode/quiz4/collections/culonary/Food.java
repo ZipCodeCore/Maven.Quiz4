@@ -1,8 +1,7 @@
 package rocks.zipcode.quiz4.collections.culonary;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Stream;
 
 /**
  * @author leon on 27/12/2018.
@@ -10,7 +9,7 @@ import java.util.Map;
 public class Food {
     List<Spice> spices;
 
-    public Food(){
+    public Food() {
         spices = new LinkedList<>();
     }
 
@@ -19,7 +18,14 @@ public class Food {
     }
 
     public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
-        return null;
+        Map<SpiceType, Integer> retMap = new LinkedHashMap<>();
+        Stream.of(spices)
+                .flatMap(Collection::stream)
+                .forEach(x -> {
+                    retMap.compute((SpiceType)x.getClass(), (k,v) -> (v == null) ? 1 : v + 1);
+                });
+
+        return retMap;
     }
 
     public void applySpice(Spice spice) {
