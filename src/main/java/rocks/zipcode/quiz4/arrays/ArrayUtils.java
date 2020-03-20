@@ -26,10 +26,12 @@ public class ArrayUtils {
     }
 
     public static String[] removeLastElement(String[] values) {
-        ArrayList<String> newArr = new ArrayList<>(Arrays.asList(values));
-        newArr.remove(getLastElement(values));
-        values = new String[newArr.size()];
-        newArr.toArray(values);
-        return values;
+//        ArrayList<String> newArr = new ArrayList<>(Arrays.asList(values));
+//        newArr.remove(getLastElement(values));
+//        values = new String[newArr.size()];
+//        newArr.toArray(values);
+//        return values;
+
+        return Arrays.copyOfRange(values,0,values.length - 1);
     }
 }
