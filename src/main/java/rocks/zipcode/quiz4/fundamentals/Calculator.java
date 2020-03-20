@@ -5,11 +5,13 @@ package rocks.zipcode.quiz4.fundamentals;
  */
 public class Calculator {
     public static Double squareRoot(Double value) {
-        return null;
+
+        return Math.sqrt(value);
     }
 
     public static Double square(Double value) {
-        return null;
+
+        return value * value;
     }
 
     public static Double[] squareRoots(Double... value) {
