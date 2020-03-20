@@ -31,6 +31,7 @@ public class StringUtils {
     }
 
     public static Boolean isIsogram(String str) {
+        //str = str.toLowerCase();
         char arr[] = str.toCharArray();
         Arrays.sort(arr);
         for(int i = 0; i < str.length()-1; i++){
@@ -41,14 +42,35 @@ public class StringUtils {
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
-        return null;
+        return (str.matches(".*(.)\\1.*"));
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        return null;
+        String k = "";
+
+        int i;
+
+        for(i =1 ; i < str.length() ; i++ ){
+
+            if(str.charAt(i) != str.charAt(i-1)) {
+
+                k = k+ str.charAt(i-1);
+
+            }
+
+        }
+
+        if(str.charAt(i-2) != str.charAt(i-1) || k.equals("")){
+
+            k+= str.charAt(i-1) ;
+
+        }
+        return k;
     }
 
     public static String invertCasing(String str) {
+        StringBuilder result = new StringBuilder((str.length()));
+        //for (char c : )
         return null;
     }
 }
