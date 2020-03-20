@@ -1,34 +1,102 @@
 package rocks.zipcode.quiz4.fundamentals;
 
+import java.util.*;
+
 /**
  * @author leon on 21/12/2018.
  */
 public class StringUtils {
+
     public static Character getMiddleCharacter(String string) {
-        return null;
+        int middle = string.length() / 2;
+        return string.charAt(middle);
     }
 
     public static String capitalizeMiddleCharacter(String str) {
-        return null;
+        String result = "";
+
+        for (int i = 0; i < str.length(); i++) {
+            if (i == str.length() / 2) {
+                result = result.concat(String.valueOf(str.toUpperCase().charAt(i)));
+            } else {
+                result = result.concat(String.valueOf(str.charAt(i)));
+            }
+        }
+
+        return result;
     }
 
     public static String lowerCaseMiddleCharacter(String str) {
-        return null;
+        String result = "";
+
+        for (int i = 0; i < str.length(); i++) {
+            if (i == str.length() / 2) {
+                result = result.concat(String.valueOf(str.toLowerCase().charAt(i)));
+            } else {
+                result = result.concat(String.valueOf(str.charAt(i)));
+            }
+        }
+
+        return result;
     }
 
     public static Boolean isIsogram(String str) {
-        return null;
+
+        Set<Character> unique = new HashSet<>();
+        for (Character c : str.toCharArray()) {
+            unique.add(c);
+        }
+        if (unique.size() == str.length()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
-        return null;
+
+        for (int i = 0; i < str.length() - 1; i++) {
+            if (str.charAt(i) == str.charAt(i + 1))
+                return true;
+        }
+        return false;
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        return null;
+        String result = str;
+
+        for (int i = 0; i < str.length() - 1; i++){
+            if (str.charAt(i) == str.charAt(i+1)){
+                result = removedChars(result,str.charAt(i));
+            }
+        }
+        return result;
+    }
+
+    private static String removedChars(String str, Character charToRemove){
+        String result = str;
+
+        result = result.replace(charToRemove.toString(), "");
+
+        return result;
     }
 
     public static String invertCasing(String str) {
-        return null;
+        String[] temp = str.split("");
+        String result = "";
+
+        for (int i = 0; i < temp.length; i++) {
+            if (temp[i].toUpperCase().equals(temp[i])) {
+                temp[i] = temp[i].toLowerCase();
+                result = result.concat(temp[i]);
+            } else if (temp[i].toLowerCase().equals(temp[i])) {
+                temp[i] = temp[i].toUpperCase();
+                result = result.concat(temp[i]);
+            } else {
+                result = result.concat(temp[i]);
+            }
+        }
+
+        return result;
     }
 }

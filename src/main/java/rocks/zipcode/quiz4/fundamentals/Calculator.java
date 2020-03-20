@@ -1,35 +1,58 @@
 package rocks.zipcode.quiz4.fundamentals;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author leon on 21/12/2018.
  */
 public class Calculator {
     public static Double squareRoot(Double value) {
-        return null;
+
+        return Math.sqrt(value);
     }
 
     public static Double square(Double value) {
-        return null;
+
+        return value * value;
     }
 
     public static Double[] squareRoots(Double... value) {
-        return null;
+        List<Double> array = new ArrayList<>();
+        Double[] result = new Double[0];
+
+        for(Double each : value){
+            array.add(Math.sqrt(each));
+        }
+        return array.toArray(result);
     }
 
     public static Double[] squares(Double... values) {
-        return null;
+        List<Double> array = new ArrayList<>();
+        Double[] result = new Double[0];
+
+        for(Double each : values){
+            array.add(each * each);
+        }
+        return array.toArray(result);
     }
 
     public static Double add(Double value1, Double value2) {
-        return null;
+
+        return value1 + value2;
     }
 
     public static Double subtract(Double value1, Double value2) {
-        return null;
+
+        return value1 - value2;
     }
 
 
     public static Double divide(Double divisor, Double dividend) {
-        return null;
+
+        if (dividend == 0){
+            return 0.0;
+        }
+        return divisor/dividend;
     }
 }
