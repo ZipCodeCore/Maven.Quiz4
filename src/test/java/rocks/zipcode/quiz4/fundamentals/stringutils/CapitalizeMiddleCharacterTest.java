@@ -23,7 +23,7 @@ public class CapitalizeMiddleCharacterTest {
 
     private void test(String expected, String input) {
         // when
-        Character actual = StringUtils.capitalizeMiddleCharacter(input);
+        String actual = StringUtils.capitalizeMiddleCharacter(input);
 
         // then
         Assert.assertEquals(expected, actual);
