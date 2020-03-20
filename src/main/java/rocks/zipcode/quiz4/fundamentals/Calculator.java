@@ -1,12 +1,16 @@
 package rocks.zipcode.quiz4.fundamentals;
 
+import static java.lang.Math.sqrt;
+
 /**
  * @author leon on 21/12/2018.
  */
 public class Calculator {
     public static Double squareRoot(Double value) {
-        return null;
+
+        return sqrt(value);
     }
+
 
     public static Double square(Double value) {
         return null;
