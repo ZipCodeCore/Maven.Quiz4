@@ -13,8 +13,9 @@ public class ArrayUtils {
     }
 
     public static String[] removeMiddleElement(String[] values) {
-//        getMiddleElement(values);
+        String remove = getMiddleElement(values);
 //        String[] result = new String[values.length- 1];
+//        result = values.clone();
 
 
 
@@ -23,7 +24,7 @@ public class ArrayUtils {
 
     public static String getLastElement(String[] values) {
 
-        return null;
+        return values[values.length-1];
     }
 
     public static String[] removeLastElement(String[] values) {
