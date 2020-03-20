@@ -57,7 +57,17 @@ public class StringUtils {
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
-        return null;
+        String[] newArray = str.split("");
+        for(int i = 0; i < newArray.length; i++){
+            if( i == newArray.length - 1){
+                break;
+            }
+            else if (newArray[i].equals(newArray[i + 1])){
+                    return true;
+                }
+            }
+
+        return false;
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
