@@ -9,9 +9,4 @@ public class Pepper implements Spice{
         return "Pepper";
     }
 
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
-    }
 }
