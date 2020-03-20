@@ -2,6 +2,7 @@ package rocks.zipcode.quiz4.fundamentals;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Stream;
 
 /**
  * @author leon on 21/12/2018.
@@ -39,6 +40,7 @@ public class StringUtils {
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
+
         String result = "";
         int index = 0;
         for (int i = 1; i < str.length() ; i++) {
@@ -49,6 +51,7 @@ public class StringUtils {
         }
         result += str.substring(index);
         return result;
+
     }
 
     public static String invertCasing(String str) {
@@ -63,5 +66,5 @@ public class StringUtils {
         }
         return result;
     }
-    
+
 }
