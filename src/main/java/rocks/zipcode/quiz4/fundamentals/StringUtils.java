@@ -46,26 +46,24 @@ public class StringUtils {
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        String k = "";
+//        char[] strA = str.toCharArray();
+//        char prev = '\0';
+//        int k = 0;
+//
+//        for (int i = 0; i < str.length(); i++)
+//        {
+//
+//            if (prev != strA[i]) {
+//                strA[k++] = strA[i];
+//                prev = strA[i];
+//            }
+//        }
+        StringBuilder sb = new StringBuilder();
+        str.chars().distinct().forEach(c -> sb.append((char) c));
+        String result = sb.toString();
 
-        int i;
+        return result;
 
-        for(i =1 ; i < str.length() ; i++ ){
-
-            if(str.charAt(i) != str.charAt(i-1)) {
-
-                k = k+ str.charAt(i-1);
-
-            }
-
-        }
-
-        if(str.charAt(i-2) != str.charAt(i-1) || k.equals("")){
-
-            k+= str.charAt(i-1) ;
-
-        }
-        return k;
     }
 
     public static String invertCasing(String str) {
