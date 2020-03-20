@@ -13,10 +13,10 @@ public class ArrayUtils {
 
     public static String[] removeMiddleElement(String[] values) {
 
-        ArrayList<String> a = new ArrayList<>(Arrays.asList(values));
-        a.remove(getMiddleElement(values));
-        values = new String[a.size()];
-        a.toArray(values);
+        ArrayList<String> newArr = new ArrayList<>(Arrays.asList(values));
+        newArr.remove(getMiddleElement(values));
+        values = new String[newArr.size()];
+        newArr.toArray(values);
         return values;
     }
 
@@ -26,10 +26,10 @@ public class ArrayUtils {
     }
 
     public static String[] removeLastElement(String[] values) {
-        ArrayList<String> a = new ArrayList<>(Arrays.asList(values));
-        a.remove(getLastElement(values));
-        values = new String[a.size()];
-        a.toArray(values);
+        ArrayList<String> newArr = new ArrayList<>(Arrays.asList(values));
+        newArr.remove(getLastElement(values));
+        values = new String[newArr.size()];
+        newArr.toArray(values);
         return values;
     }
 }
