@@ -17,7 +17,11 @@ public class Calculator {
     }
 
     public static Double[] squareRoots(Double... value) {
-        return null;
+        Double[] result = new  Double[value.length];
+        for(int i = 0; i < value.length; i++){
+            result[i] = Math.sqrt((value[i]));
+        }
+        return result;
     }
 
     public static Double[] squares(Double... values) {
