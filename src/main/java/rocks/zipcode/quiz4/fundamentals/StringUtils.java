@@ -1,9 +1,6 @@
 package rocks.zipcode.quiz4.fundamentals;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -47,15 +44,20 @@ public class StringUtils {
         return (str.matches(".*(.)\\1.*"));
     }
 
+
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        for (int i = 1; i < str.length(); i++) {
-            if (str.charAt(i) == str.charAt(i-1)) {
-                str = str.substring(0, i - 1) + str.substring(i + 1);
-                i = 0;
-            }
+        ArrayList<Character> dups = new ArrayList<>();
+        String result = "";
+        for (int i = 0; i < str.length()-1; i++) {
+            if(str.charAt(i) == str.charAt(i+1)) dups.add(str.charAt(i));
         }
-        return str;
+        for (int i = 0; i < str.length()-1; i++) {
+            if(!dups.contains(str.charAt(i))) result += str.charAt(i);
+        }
+        result += str.charAt(str.length()-1);
+        return result;
     }
+
 
     public static String invertCasing(String str) {
         char[] array = str.toCharArray();

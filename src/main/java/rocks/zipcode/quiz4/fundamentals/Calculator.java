@@ -22,7 +22,6 @@ public class Calculator {
                 })
                 .toArray();
         return result;
-
     }
 
     public static Double[] squares(Double... values) {
