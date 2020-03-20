@@ -38,6 +38,6 @@ public class Calculator {
 
 
     public static Double divide(Double divisor, Double dividend) {
-        return null;
+        return divisor/dividend;
     }
 }
