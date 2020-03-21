@@ -11,6 +11,6 @@ public class Pepper implements Spice{
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 }

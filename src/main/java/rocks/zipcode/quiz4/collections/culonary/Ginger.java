@@ -11,6 +11,6 @@ public class Ginger implements Spice{
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 }
