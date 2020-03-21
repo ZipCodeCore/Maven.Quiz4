@@ -1,5 +1,10 @@
 package rocks.zipcode.quiz4.fundamentals;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * @author leon on 21/12/2018.
  */
@@ -46,15 +51,14 @@ public class StringUtils {
 
     public static Boolean isIsogram(String str) {
         String[] newArray = str.split("");
-
-        for(int i = 0; i < newArray.length; i++){
-            for(int j = 1; j <newArray.length; i++){
-                if(newArray[i].equals(newArray[j])){
-                    return false;
-                }
+        List<String> newArray2 = new ArrayList<String>();
+        newArray2.addAll(Arrays.asList(newArray));
+        for(int i = 0; i < newArray2.size(); i++){
+            if(Collections.frequency(newArray2, newArray2.get(i)) > 1){
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
