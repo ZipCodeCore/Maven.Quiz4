@@ -6,8 +6,11 @@ package rocks.zipcode.quiz4.collections.culonary;
 public class Pepper implements Spice{
     String name = "Pepper";
 
+
     public String getName() {
         return this.name;
     }
 
-}
+    public void setName(String name) {
+        this.name = name;
+    }}
