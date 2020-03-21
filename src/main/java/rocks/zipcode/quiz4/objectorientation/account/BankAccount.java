@@ -9,7 +9,7 @@ public class BankAccount extends Account implements Transactable {
 
     @Override
     public void deposit(Double amountToIncreaseBy) {
-        
+
     }
 
     @Override
