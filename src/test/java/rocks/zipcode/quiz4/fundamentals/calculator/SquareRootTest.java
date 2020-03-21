@@ -7,31 +7,31 @@ public class SquareRootTest {
     @Test
     public void test1() {
         // given
-        test(8.0, 64.0);
+        test(1.0, 1.0);
     }
 
     @Test
     public void test2() {
         // given
-        test(438.0, 191844.0);
+        test(2.0, 4.0);
     }
 
     @Test
     public void test3() {
         // given
-        test(12.0, 144.0);
+        test(3.0, 9.0);
     }
 
     @Test
     public void test4() {
         // given
-        test(864.0, 746496.0);
+        test(4.0, 16.0);
     }
 
     @Test
     public void test5() {
         // given
-        test(6.0, 36.0);
+        test(5.0, 25.0);
     }
 
     private void test(Double expected, Double input) {

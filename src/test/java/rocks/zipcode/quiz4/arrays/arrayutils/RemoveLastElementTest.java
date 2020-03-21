@@ -11,8 +11,8 @@ public class RemoveLastElementTest {
     @Test
     public void test1() {
         // given
-        String[] expected = {"The", "Quick"};
-        String[] input = {"The", "Quick", "Brown"};
+        String[] expected = {"Get", "Quick"};
+        String[] input = {"Get", "Quick", "Brown"};
         test(expected, input);
 
     }
@@ -20,16 +20,16 @@ public class RemoveLastElementTest {
     @Test
     public void test2() {
         // given
-        String[] expected = {"The", "Quick", "Brown", "Fox"};
-        String[] input = {"The", "Quick", "Brown", "Fox", "Jumps"};
+        String[] expected = {"This", "Quick", "Brown", "Fox"};
+        String[] input = {"This", "Quick", "Brown", "Fox", "Jumps"};
         test(expected, input);
     }
 
     @Test
     public void test3() {
         // given
-        String[] expected = {"The", "Quick", "Brown", "Fox", "Jumps", "Over"};
-        String[] input = {"The", "Quick", "Brown", "Fox", "Jumps", "Over", "The"};
+        String[] expected = {"Off", "Quick", "Brown", "Fox", "Jumps", "Over"};
+        String[] input = {"Off", "Quick", "Brown", "Fox", "Jumps", "Over", "The"};
         test(expected, input);
     }
 
@@ -37,8 +37,8 @@ public class RemoveLastElementTest {
     @Test
     public void test4() {
         // given
-        String[] expected = {"The", "Quick", "Brown", "Fox", "Jumps", "Over", "The", "Lazy"};
-        String[] input = {"The", "Quick", "Brown", "Fox", "Jumps", "Over", "The", "Lazy", "Dog"};
+        String[] expected = {"My", "Quick", "Brown", "Fox", "Jumps", "Over", "The", "Lazy"};
+        String[] input = {"My", "Quick", "Brown", "Fox", "Jumps", "Over", "The", "Lazy", "Dog"};
         test(expected, input);
     }
 

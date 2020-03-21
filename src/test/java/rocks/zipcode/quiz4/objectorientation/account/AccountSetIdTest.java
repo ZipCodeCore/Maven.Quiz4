@@ -18,21 +18,21 @@ public class AccountSetIdTest {
 
     @Test
     public void test1() {
-        test(0L);
-    }
-
-    @Test
-    public void test2() {
         test(10L);
     }
 
     @Test
+    public void test2() {
+        test(110L);
+    }
+
+    @Test
     public void test3() {
-        test(Long.MAX_VALUE);
+        test(Long.MAX_VALUE-1);
     }
 
     @Test
     public void test4() {
-        test(Long.MIN_VALUE);
+        test(Long.MIN_VALUE+1);
     }
 }

@@ -11,31 +11,31 @@ public class AddTest {
     @Test
     public void test1() {
         // given
-        test(99.0, 10.5, 88.5);
+        test(100.0, 50.0, 50.0);
     }
 
     @Test
     public void test2() {
         // given
-        test(40.12, 19.93, 20.19);
+        test(150.0, 50.0, 150.0);
     }
 
     @Test
     public void test3() {
         // given
-        test(39.94, 19.94, 20.00);
+        test(50.0, 25.0, 25.0);
     }
 
     @Test
     public void test4() {
         // given
-        test(100.00, 50.0, 50.0);
+        test(75.0, 25.0, 50.0);
     }
 
     @Test
     public void test5() {
         // given
-        test(22.10, 7.06, 15.04);
+        test(25.0, 12.5, 12.5);
     }
 
     private void test(Double expected, Double input1, Double input2) {

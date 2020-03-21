@@ -11,31 +11,31 @@ public class SquareTest {
     @Test
     public void test1() {
         // given
-        test(1069.29, 32.70);
+        test(1.0, 1.0);
     }
 
     @Test
     public void test2() {
         // given
-        test(476003.4049, 689.93);
+        test(4.0, 2.0);
     }
 
     @Test
     public void test3() {
         // given
-        test(36.0, 6.0);
+        test(9.0, 3.0);
     }
 
     @Test
     public void test4() {
         // given
-        test(64.0, 8.0);
+        test(16.0, 4.0);
     }
 
     @Test
     public void test5() {
         // given
-        test(321489.0, 567.0);
+        test(25.0, 5.0);
     }
 
     private void test(Double expected, Double input) {

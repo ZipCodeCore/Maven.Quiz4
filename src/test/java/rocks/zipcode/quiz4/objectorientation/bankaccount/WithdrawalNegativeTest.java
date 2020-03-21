@@ -13,27 +13,27 @@ public class WithdrawalNegativeTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void test1() {
-        test(0.0, 1.0);
+        test(01.0, 11.0);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void test2() {
-        test(10.0, 50.0);
+        test(101.0, 501.0);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void test3() {
-        test(10.0, -50.0);
+        test(101.0, -501.0);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void test4() {
-        test(00.0, -50.0);
+        test(001.0, -501.0);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void test5() {
-        test(00.0, 0.01);
+        test(001.0, 1.00);
     }
 
     private void test(Double initialBalance, Double withdrawalAmount) {

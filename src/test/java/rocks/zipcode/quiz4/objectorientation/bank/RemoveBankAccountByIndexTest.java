@@ -10,15 +10,30 @@ public class RemoveBankAccountByIndexTest {
     public void test1() {
         // given
         Bank bank = new Bank();
-        BankAccount bankAccount = new BankAccount();
-        bank.addBankAccount(bankAccount);
-        Assert.assertTrue(bank.containsBankAccount(bankAccount));
+        BankAccount bankAccount1 = new BankAccount();
+        BankAccount bankAccount2 = new BankAccount();
+        BankAccount bankAccount3= new BankAccount();
+        BankAccount bankAccount4 = new BankAccount();
+
+        bank.addBankAccount(bankAccount1);
+        bank.addBankAccount(bankAccount2);
+        bank.addBankAccount(bankAccount3);
+        bank.addBankAccount(bankAccount4);
+
+
+        Assert.assertTrue(bank.containsBankAccount(bankAccount1));
+        Assert.assertTrue(bank.containsBankAccount(bankAccount2));
+        Assert.assertTrue(bank.containsBankAccount(bankAccount3));
+        Assert.assertTrue(bank.containsBankAccount(bankAccount4));
 
         // when
         bank.removeBankAccountByIndex(0);
 
         // then
-        Assert.assertFalse(bank.containsBankAccount(bankAccount));
+        Assert.assertFalse(bank.containsBankAccount(bankAccount1));
+        Assert.assertTrue(bank.containsBankAccount(bankAccount2));
+        Assert.assertTrue(bank.containsBankAccount(bankAccount3));
+        Assert.assertTrue(bank.containsBankAccount(bankAccount4));
     }
 
     @Test
@@ -27,12 +42,19 @@ public class RemoveBankAccountByIndexTest {
         Bank bank = new Bank();
         BankAccount bankAccount1 = new BankAccount();
         BankAccount bankAccount2 = new BankAccount();
+        BankAccount bankAccount3= new BankAccount();
+        BankAccount bankAccount4 = new BankAccount();
 
         bank.addBankAccount(bankAccount1);
         bank.addBankAccount(bankAccount2);
+        bank.addBankAccount(bankAccount3);
+        bank.addBankAccount(bankAccount4);
+
 
         Assert.assertTrue(bank.containsBankAccount(bankAccount1));
         Assert.assertTrue(bank.containsBankAccount(bankAccount2));
+        Assert.assertTrue(bank.containsBankAccount(bankAccount3));
+        Assert.assertTrue(bank.containsBankAccount(bankAccount4));
 
         // when
         bank.removeBankAccountByIndex(1);
@@ -40,8 +62,9 @@ public class RemoveBankAccountByIndexTest {
         // then
         Assert.assertTrue(bank.containsBankAccount(bankAccount1));
         Assert.assertFalse(bank.containsBankAccount(bankAccount2));
+        Assert.assertTrue(bank.containsBankAccount(bankAccount3));
+        Assert.assertTrue(bank.containsBankAccount(bankAccount4));
     }
-
 
     @Test
     public void test3() {
@@ -50,14 +73,18 @@ public class RemoveBankAccountByIndexTest {
         BankAccount bankAccount1 = new BankAccount();
         BankAccount bankAccount2 = new BankAccount();
         BankAccount bankAccount3= new BankAccount();
+        BankAccount bankAccount4 = new BankAccount();
 
         bank.addBankAccount(bankAccount1);
         bank.addBankAccount(bankAccount2);
         bank.addBankAccount(bankAccount3);
+        bank.addBankAccount(bankAccount4);
+
 
         Assert.assertTrue(bank.containsBankAccount(bankAccount1));
         Assert.assertTrue(bank.containsBankAccount(bankAccount2));
         Assert.assertTrue(bank.containsBankAccount(bankAccount3));
+        Assert.assertTrue(bank.containsBankAccount(bankAccount4));
 
         // when
         bank.removeBankAccountByIndex(2);
@@ -66,5 +93,6 @@ public class RemoveBankAccountByIndexTest {
         Assert.assertTrue(bank.containsBankAccount(bankAccount1));
         Assert.assertTrue(bank.containsBankAccount(bankAccount2));
         Assert.assertFalse(bank.containsBankAccount(bankAccount3));
+        Assert.assertTrue(bank.containsBankAccount(bankAccount4));
     }
 }

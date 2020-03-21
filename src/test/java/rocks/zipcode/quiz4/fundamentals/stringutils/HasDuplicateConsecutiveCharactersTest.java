@@ -7,25 +7,25 @@ import rocks.zipcode.quiz4.fundamentals.StringUtils;
 public class HasDuplicateConsecutiveCharactersTest {
     @Test
     public void test1() {
-        String input = "Happy";
+        String input = "Fappy";
         Assert.assertTrue(StringUtils.hasDuplicateConsecutiveCharacters(input));
     }
 
     @Test
     public void test2() {
-        String input = "Fool";
+        String input = "Cool";
         Assert.assertTrue(StringUtils.hasDuplicateConsecutiveCharacters(input));
     }
 
     @Test
     public void test3() {
-        String input = "George";
+        String input = "Aeorge";
         Assert.assertFalse(StringUtils.hasDuplicateConsecutiveCharacters(input));
     }
 
     @Test
     public void test4() {
-        String input = "False";
+        String input = "Talse";
         Assert.assertFalse(StringUtils.hasDuplicateConsecutiveCharacters(input));
     }
 }

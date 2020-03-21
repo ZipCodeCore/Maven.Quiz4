@@ -11,31 +11,31 @@ public class DivideTest {
     @Test
     public void test1() {
         // given
-        test(12.0, 144.0, 12.0);
+        test(1.0, 100.0, 100.0);
     }
 
     @Test
     public void test2() {
         // given
-        test(5.0, 60.0, 12.0);
+        test(2.0, 100.0, 50.0);
     }
 
     @Test
     public void test3() {
         // given
-        test(6.0, 36.0, 6.0);
+        test(4.0, 100.0, 25.0);
     }
 
     @Test
     public void test4() {
         // given
-        test(12.6, 63.0, 5.0);
+        test(8.0, 100.0, 12.5);
     }
 
     @Test
     public void test5() {
         // given
-        test(8.0, 72.0, 9.0);
+        test(16.0, 100.0, 6.25);
     }
 
     private void test(Double expected, Double input1, Double input2) {

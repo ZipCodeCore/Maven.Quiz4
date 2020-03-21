@@ -43,32 +43,32 @@ public class GetSpiceCountTest {
 
     @Test
     public void test1() {
-        test(5, Pepper::new);
+        test(50, Pepper::new);
     }
 
     @Test
     public void test2() {
-        test(10, Pepper::new);
+        test(100, Pepper::new);
     }
 
     @Test
     public void test3() {
-        test(3, Curry::new);
+        test(30, Curry::new);
     }
 
 
     @Test
     public void test4() {
-        test(6, Curry::new);
+        test(60, Curry::new);
     }
 
     @Test
     public void test5() {
-        test(2, Ginger::new);
+        test(20, Ginger::new);
     }
 
     @Test
     public void test6() {
-        test(4, Ginger::new);
+        test(40, Ginger::new);
     }
 }

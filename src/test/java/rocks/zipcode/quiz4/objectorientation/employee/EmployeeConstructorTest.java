@@ -57,9 +57,9 @@ public class EmployeeConstructorTest {
     @Test
     public void testNonNullaryConstructor() {
         // given
-        Double expectedHourlyWage = 35.0;
-        Double expectedHoursWorked = 0.0;
-        Double expectedBalance = 15.0;
+        Double expectedHourlyWage = 10.0;
+        Double expectedHoursWorked = 10.0;
+        Double expectedBalance = 20.0;
         Double expectedBankAccountBalance = expectedBalance;
         Double expectedMoneyEarned = expectedHourlyWage * expectedHoursWorked;
         BankAccount bankAccount = new BankAccount();

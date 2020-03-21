@@ -31,19 +31,25 @@ public class GetAllSpicesTest {
     @Test
     public void test1() {
         // given
-        test(Arrays.asList((Spice) new Curry()));
+        test(Arrays.asList(
+                (Spice) new Curry(),
+                (Spice) new Curry()));
     }
 
     @Test
     public void test2() {
         // given
-        test(Arrays.asList((Spice) new Ginger()));
+        test(Arrays.asList(
+                (Spice) new Ginger(),
+                (Spice) new Ginger()));
     }
 
     @Test
     public void test3() {
         // given
-        test(Arrays.asList((Spice) new Pepper()));
+        test(Arrays.asList(
+                (Spice) new Pepper(),
+                (Spice) new Pepper()));
     }
 
     @Test
@@ -51,6 +57,7 @@ public class GetAllSpicesTest {
         // given
         test(Arrays.asList(
                 (Spice) new Pepper(),
+                (Spice) new Ginger(),
                 (Spice) new Ginger(),
                 (Spice) new Curry()));
     }
@@ -62,6 +69,7 @@ public class GetAllSpicesTest {
                 (Spice) new Pepper(),
                 (Spice) new Pepper(),
                 (Spice) new Ginger(),
+                (Spice) new Curry(),
                 (Spice) new Curry()));
     }
 
@@ -72,6 +80,8 @@ public class GetAllSpicesTest {
         test(Arrays.asList(
                 (Spice) new Pepper(),
                 (Spice) new Pepper(),
+                (Spice) new Pepper(),
+                (Spice) new Ginger(),
                 (Spice) new Ginger(),
                 (Spice) new Ginger(),
                 (Spice) new Curry()));

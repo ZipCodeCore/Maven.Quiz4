@@ -7,32 +7,32 @@ import rocks.zipcode.quiz4.fundamentals.StringUtils;
 public class IsogramPositiveTest {
     @Test
     public void test1() {
-        String input = "Jump";
+        String input = "Lump";
         Assert.assertTrue(StringUtils.isIsogram(input));
     }
 
     @Test
     public void test2() {
-        String input = "Jj";
+        String input = "Lj";
         Assert.assertTrue(StringUtils.isIsogram(input));
     }
 
     @Test
     public void test3() {
-        String input = "Jj0Oo";
+        String input = "Lj0Oo";
         Assert.assertTrue(StringUtils.isIsogram(input));
     }
 
 
     @Test
     public void test4() {
-        String input = "The Quick";
+        String input = "Lhe Quick";
         Assert.assertTrue(StringUtils.isIsogram(input));
     }
 
     @Test
     public void test5() {
-        String input = "Brown";
+        String input = "Lrown";
         Assert.assertTrue(StringUtils.isIsogram(input));
     }
 

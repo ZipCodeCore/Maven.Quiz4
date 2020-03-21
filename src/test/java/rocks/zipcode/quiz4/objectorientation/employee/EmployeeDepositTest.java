@@ -12,27 +12,27 @@ import rocks.zipcode.quiz4.objectorientation.account.Transactable;
 public class EmployeeDepositTest {
     @Test
     public void test1() {
-        test(0.0, 10.0);
+        test(01.0, 101.0);
     }
 
     @Test
     public void test2() {
-        test(0.0, 20.0);
+        test(01.0, 201.0);
     }
 
     @Test
     public void test3() {
-        test(10.0, 100.0);
+        test(101.0, 1001.0);
     }
 
     @Test
     public void test4() {
-        test(20.0, 300.0);
+        test(201.0, 3001.0);
     }
 
     @Test
     public void test5() {
-        test(0.0, 400.0);
+        test(01.0, 4001.0);
     }
 
 

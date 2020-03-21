@@ -8,38 +8,38 @@ public class RemoveDuplicateConsecutiveCharactersTest {
     @Test
     public void test1() {
         // given
-        String input = "Fool";
-        String expected = "Fl";
+        String input = "Zool";
+        String expected = "Zl";
         test(expected, input);
     }
 
     @Test
     public void test2() {
         // given
-        String input = "Mississippi";
-        String expected = "Miiii";
+        String input = "Zississippi";
+        String expected = "Ziiii";
         test(expected, input);
     }
 
     @Test
     public void test3() {
         // given
-        String input = "Fleet";
-        String expected = "Flt";
+        String input = "Zleet";
+        String expected = "Zlt";
         test(expected, input);
     }
 
     @Test
     public void test4() {
         // given
-        String input = "Independence";
+        String input = "Zndependence";
         String expected = input;
         test(expected, input);
     }
     @Test
     public void test5() {
         // given
-        String input = "Integer";
+        String input = "Znteger";
         String expected = input;
         test(expected, input);
     }

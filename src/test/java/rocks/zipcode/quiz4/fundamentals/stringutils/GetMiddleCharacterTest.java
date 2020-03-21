@@ -8,8 +8,8 @@ public class GetMiddleCharacterTest {
     @Test
     public void test1() {
         // given
-        String input = "joint";
-        Character expected = 'i';
+        String input = "jerkk";
+        Character expected = 'r';
         test(expected, input);
     }
 
@@ -17,8 +17,8 @@ public class GetMiddleCharacterTest {
     @Test
     public void test2() {
         // given
-        String input = "burnt";
-        Character expected = 'r';
+        String input = "color";
+        Character expected = 'l';
         test(expected, input);
     }
 
@@ -26,16 +26,16 @@ public class GetMiddleCharacterTest {
     @Test
     public void test3() {
         // given
-        String input = "bang!";
-        Character expected = 'n';
+        String input = "bark!";
+        Character expected = 'r';
         test(expected, input);
     }
 
     @Test
     public void test4() {
         // given
-        String input = "bang!";
-        Character expected = 'n';
+        String input = "park!";
+        Character expected = 'r';
         test(expected, input);
     }
 

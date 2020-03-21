@@ -11,7 +11,7 @@ public class GetLastElementTest {
     @Test
     public void test1() {
         // given
-        String expected = "Dog";
+        String expected = "Get";
         String[] input = {"The", "Quick", "Brown", "Fox", "Jumps", "Over", "The", "Lazy", expected};
         test(expected, input);
     }
@@ -19,7 +19,7 @@ public class GetLastElementTest {
     @Test
     public void test2() {
         // given
-        String expected = "Lazy";
+        String expected = "This";
         String[] input = {"The", "Quick", "Brown", "Fox", "Jumps", "Over", "The", expected};
         test(expected, input);
     }
@@ -28,7 +28,7 @@ public class GetLastElementTest {
     @Test
     public void test3() {
         // given
-        String expected = "The";
+        String expected = "Off";
         String[] input = {"The", "Quick", "Brown", "Fox", "Jumps", "Over", expected};
         test(expected, input);
     }
@@ -37,7 +37,7 @@ public class GetLastElementTest {
     @Test
     public void test4() {
         // given
-        String expected = "Over";
+        String expected = "My";
         String[] input = {"The", "Quick", "Brown", "Fox", "Jumps", expected};
         test(expected, input);
     }

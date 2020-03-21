@@ -12,28 +12,28 @@ import rocks.zipcode.quiz4.objectorientation.account.Transactable;
 public class WithdrawalPositiveTest {
     @Test
     public void test1() {
-        test(100.0, 80.0);
+        test(1001.0, 801.0);
     }
 
     @Test
     public void test2() {
-        test(150.0, 70.0);
+        test(1501.0, 701.0);
     }
 
 
     @Test
     public void test3() {
-        test(150.0, 150.0);
+        test(1501.0, 1501.0);
     }
 
     @Test
     public void test4() {
-        test(150.0, 100.0);
+        test(1501.0, 1001.0);
     }
 
     @Test
     public void test5() {
-        test(150.0, 50.0);
+        test(1501.0, 501.0);
     }
 
     public void test(Double initialBalance, Double withdrawalAmount) {

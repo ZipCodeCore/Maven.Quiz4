@@ -8,8 +8,8 @@ public class RemoveMiddleElementTest {
     @Test
     public void test1() {
         // given
-        String[] expected = {"The", "Brown"};
-        String[] input = {"The", "Quick", "Brown"};
+        String[] expected = {"Get", "This"};
+        String[] input = {"Get", "Quick", "This"};
         test(expected, input);
 
     }
@@ -17,16 +17,16 @@ public class RemoveMiddleElementTest {
     @Test
     public void test2() {
         // given
-        String[] expected = {"The", "Quick", "Fox", "Jumps"};
-        String[] input = {"The", "Quick", "Brown", "Fox", "Jumps"};
+        String[] expected = {"Get", "This", "Off", "My"};
+        String[] input = {"Get", "This", "Brown", "Off", "My"};
         test(expected, input);
     }
 
     @Test
     public void test3() {
         // given
-        String[] expected = {"The", "Quick", "Brown", "Jumps", "Over", "The"};
-        String[] input = {"The", "Quick", "Brown", "Fox", "Jumps", "Over", "The"};
+        String[] expected = {"Get", "This", "Off", "Fox", "My", "Plate"};
+        String[] input = {"Get", "This", "Off", "Fox", "Of", "My", "Plate"};
         test(expected, input);
     }
 
@@ -34,8 +34,8 @@ public class RemoveMiddleElementTest {
     @Test
     public void test4() {
         // given
-        String[] expected = {"The", "Quick", "Brown", "Fox", "Over", "The", "Lazy", "Dog"};
-        String[] input = {"The", "Quick", "Brown", "Fox", "Jumps", "Over", "The", "Lazy", "Dog"};
+        String[] expected = {"Get", "This", "Off", "Of", "My", "Damn", "Errand", "List"};
+        String[] input = {"Get", "This", "Off", "Of", "Jumps", "My", "Damn", "Errand", "List"};
         test(expected, input);
     }
 

@@ -8,16 +8,16 @@ public class CapitalizeMiddleCharacterTest {
     @Test
     public void test1() {
         // given
-        String input = "o";
-        String expected = "O";
+        String input = "a";
+        String expected = "A";
         test(expected, input);
     }
 
     @Test
     public void test2() {
         // given
-        String input = "ooo";
-        String expected = "oOo";
+        String input = "aaa";
+        String expected = "aAa";
         test(expected, input);
     }
 

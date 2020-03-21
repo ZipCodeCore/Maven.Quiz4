@@ -11,31 +11,31 @@ public class SubtractTest {
     @Test
     public void test1() {
         // given
-        test(5.0, 10.0, 5.0);
+        test(0.0, 1.0, 1.0);
     }
 
     @Test
     public void test2() {
         // given
-        test(150.0, 250.0, 100.0);
+        test(1.0, 2.0, 1.0);
     }
 
     @Test
     public void test3() {
         // given
-        test(762.0, 862.0, 100.0);
+        test(1.5, 2.5, 1.0);
     }
 
     @Test
     public void test4() {
         // given
-        test(-899.999, -999.999, -100.0);
+        test(-1.0, 0.0, 1.0);
     }
 
     @Test
     public void test5() {
         // given
-        test(-10.0, -5.0, 5.0);
+        test(-1.5, -2.0, -0.5);
     }
 
     private void test(Double expected, Double input1, Double input2) {

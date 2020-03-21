@@ -13,27 +13,27 @@ public class IncreaseHoursWorkedTest {
     @Test
     public void test1() {
         // given
-        test(0.0, 1.0);
+        test(01.0, 11.0);
     }
 
     @Test
     public void test2() {
         // given
-        test(0.0, 5.0);
+        test(01.0, 51.0);
     }
 
 
     @Test
     public void test4() {
         // given
-        test(1.0, 10.0);
+        test(11.0, 101.0);
     }
 
 
     @Test
     public void test5() {
         // given
-        test(2.0, 2.0);
+        test(21.0, 21.0);
     }
 
 

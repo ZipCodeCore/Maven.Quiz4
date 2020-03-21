@@ -8,32 +8,32 @@ public class LowerCaseMiddleCharacterTest {
     @Test
     public void test1() {
         // given
-        String input = "O";
-        String expected = "o";
+        String input = "A";
+        String expected = "a";
         test(expected, input);
     }
 
     @Test
     public void test2() {
         // given
-        String input = "OOO";
-        String expected = "OoO";
+        String input = "AAA";
+        String expected = "AaA";
         test(expected, input);
     }
 
     @Test
     public void test3() {
         // given
-        String input = "APPLE";
-        String expected = "APpLE";
+        String input = "ZPPLE";
+        String expected = "ZPpLE";
         test(expected, input);
     }
 
     @Test
     public void test4() {
         // given
-        String input = "Waffle Sauces";
-        String expected = "Waffle Sauces";
+        String input = "Zaffle Sauces";
+        String expected = "Zaffle Sauces";
         test(expected, input);
     }
 
