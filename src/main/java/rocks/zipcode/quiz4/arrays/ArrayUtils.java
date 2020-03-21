@@ -15,9 +15,6 @@ public class ArrayUtils {
     }
 
     public static String[] removeMiddleElement(String[] values) {
-        String remove = getMiddleElement(values);
-//        String[] result = new String[values.length- 1];
-//        result = values.clone();
 
 
 
