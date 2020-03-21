@@ -46,20 +46,21 @@ public class StringUtils {
 
     public static Boolean isIsogram(String str) {
         String[] newArray = str.split("");
+
         for(int i = 0; i < newArray.length; i++){
             for(int j = 1; j <newArray.length; i++){
-                if(newArray[i] == newArray[j]){
+                if(newArray[i].equals(newArray[j])){
                     return false;
                 }
             }
         }
-        return true;
+        return false;
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
         String[] newArray = str.split("");
         for(int i = 0; i < newArray.length; i++){
-            if( i == newArray.length - 1){
+            if( i == (newArray.length - 1)){
                 break;
             }
             else if (newArray[i].equals(newArray[i + 1])){
@@ -71,7 +72,24 @@ public class StringUtils {
     }
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        return null;
+        String[] newArray = str.split("");
+        String newString = "";
+        for(int i = 0; i < newArray.length; i++){
+            if(i == (newArray.length-1) && (newArray[newArray.length - 1] != newArray[newArray.length - 2])){
+                newString += newArray[i];
+            }
+            else if(i == (newArray.length-1)){
+                break;
+            }
+            else if(newArray[i].equals(newArray[i+1])){
+                i++;
+            }
+            else if(!newArray[i].equals(newArray[i+1])){
+                newString += newArray[i];
+            }
+        }
+
+        return newString;
     }
 
     public static String invertCasing(String str) {
