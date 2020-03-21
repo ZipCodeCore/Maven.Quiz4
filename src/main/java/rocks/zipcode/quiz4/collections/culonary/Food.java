@@ -1,20 +1,36 @@
 package rocks.zipcode.quiz4.collections.culonary;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * @author leon on 27/12/2018.
  */
 public class Food {
-    public List<Spice> getAllSpices() {
-        return null;
+    ArrayList<Spice> added;
+
+    public Food(){
+        this.added = new ArrayList<Spice>();
+
+    }
+    public List getAllSpices() {
+        return added;
     }
 
     public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
-        return null;
+        HashMap<SpiceType, Integer> spiceMap = new HashMap<>();
+        for(Spice currentSpice : added){
+    //achieved casting w/ help from classmate
+            SpiceType spice = (SpiceType)currentSpice.getClass();
+            spiceMap.put(spice,added.size());
+        }
+        System.out.println(spiceMap.keySet());
+
+        return spiceMap;
     }
 
     public void applySpice(Spice spice) {
+        added.add(spice);
     }
 }
