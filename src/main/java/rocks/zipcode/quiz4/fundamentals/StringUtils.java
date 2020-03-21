@@ -20,7 +20,6 @@ public class StringUtils {
         result = getMiddleCharacter(str).toString().toUpperCase();
 
         return str.substring(0, str.length() / 2) + result + str.substring((str.length() / 2 + 1));
-
     }
 
     public static String lowerCaseMiddleCharacter(String str) {
@@ -46,7 +45,6 @@ public class StringUtils {
             }
         }
         return true;
-
          */
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
