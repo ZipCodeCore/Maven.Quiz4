@@ -2,15 +2,13 @@ package rocks.zipcode.quiz4.objectorientation.employee;
 
 import org.junit.Assert;
 import org.junit.Test;
-import rocks.zipcode.quiz4.objectorientation.account.Account;
-import rocks.zipcode.quiz4.objectorientation.account.Employee;
-import rocks.zipcode.quiz4.objectorientation.account.Transactable;
-import rocks.zipcode.quiz4.objectorientation.account.Worker;
+import rocks.zipcode.quiz4.objectorientation.account.*;
 
 /**
  * @author leon on 30/12/2018.
  */
 public class EmployeePolymorphismTest {
+
     private Object employee = new Employee();
 
     @Test

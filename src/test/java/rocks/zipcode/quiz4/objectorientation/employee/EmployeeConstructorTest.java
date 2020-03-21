@@ -67,7 +67,7 @@ public class EmployeeConstructorTest {
         Transactable transactableBankAccount = (Transactable)bankAccount;
 
         // when
-        Employee employee = new Employee(bankAccount);
+        Employee employee = new Employee();
         Worker workerEmployee = (Worker) employee;
         Transactable transactableEmployee = (Transactable) employee;
 
