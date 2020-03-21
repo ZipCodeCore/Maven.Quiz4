@@ -3,17 +3,19 @@ package rocks.zipcode.quiz4.objectorientation.account;
 /**
  * @author leon on 30/12/2018.
  */
-public class Employee implements Worker, Transactable{
+public class Employee extends BankAccount implements Worker, Transactable{
 
     private BankAccount personalAccount;
     private Double numberOfHours;
     private Double hourlyWage;
     private Double moneyEarned;
 
-
     public Employee() {
         this(new BankAccount());
+
+
     }
+
 
     public Employee(BankAccount bankAccount) {
         this.personalAccount = bankAccount;
@@ -22,6 +24,8 @@ public class Employee implements Worker, Transactable{
         this.moneyEarned= 0.0;
 
     }
+
+
 
     public BankAccount getBankAccount() {
 
@@ -45,7 +49,7 @@ public class Employee implements Worker, Transactable{
 
     @Override
     public Double getBalance() {
-        return personalAccount.getBalance;
+        return personalAccount.getBalance();
     }
 
     @Override
@@ -55,7 +59,7 @@ public class Employee implements Worker, Transactable{
 
     @Override
     public Double getHoursWorked() {
-        return  numberOfHours;
+        return numberOfHours;
     }
 
     @Override
@@ -68,3 +72,5 @@ public class Employee implements Worker, Transactable{
         return moneyEarned;
     }
 }
+
+
