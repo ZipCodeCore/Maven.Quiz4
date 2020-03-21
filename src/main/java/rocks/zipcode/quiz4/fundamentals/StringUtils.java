@@ -93,6 +93,17 @@ public class StringUtils {
     }
 
     public static String invertCasing(String str) {
-        return null;
+        String newString = "";
+        String[] newArray = str.split("");
+        for(int i = 0; i < newArray.length; i++){
+            if(newArray[i].toUpperCase().equals(newArray[i])){
+                newString += newArray[i].toLowerCase();
+            }
+            else{
+                newString += newArray[i].toUpperCase();
+            }
+        }
+
+        return newString;
     }
 }
