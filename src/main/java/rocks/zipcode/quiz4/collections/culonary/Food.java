@@ -40,18 +40,4 @@ public class Food {
     }
 
 
-    public static void main(String[] args) {
-        Food food = new Food();
-        Spice spice = null;
-        Supplier<?> ingredientSupplier = Pepper::new;
-        for (int i = 0; i < 5; i++) {
-            // given the `Spice` interface has been implemented
-            spice = (Spice) ingredientSupplier.get();
-
-            // given spice is applied to food
-            food.applySpice(spice);
-        }
-        food.getSpiceCount();
-    }
-
 }
