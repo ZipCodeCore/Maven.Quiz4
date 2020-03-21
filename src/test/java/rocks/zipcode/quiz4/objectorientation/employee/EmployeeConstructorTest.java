@@ -73,6 +73,7 @@ public class EmployeeConstructorTest {
 
         // then
         Assert.assertNotNull(employee.getBankAccount());
+        System.out.println(employee.getHourlyWage());
         Assert.assertEquals(expectedHourlyWage, workerEmployee.getHourlyWage());
         Assert.assertEquals(expectedHoursWorked, workerEmployee.getHoursWorked());
         Assert.assertEquals(expectedBalance, transactableEmployee.getBalance());

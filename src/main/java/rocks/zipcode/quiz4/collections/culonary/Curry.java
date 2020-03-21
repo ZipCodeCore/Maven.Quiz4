@@ -1,4 +1,11 @@
 package rocks.zipcode.quiz4.collections.culonary;
 
-public class Curry {
+public class Curry implements Spice{
+
+
+    @Override
+    public String getName() {
+
+        return this.getClass().toString();
+    }
 }
