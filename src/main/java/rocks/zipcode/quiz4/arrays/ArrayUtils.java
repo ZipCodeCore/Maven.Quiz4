@@ -5,11 +5,23 @@ package rocks.zipcode.quiz4.arrays;
  */
 public class ArrayUtils {
     public static String getMiddleElement(String[] values) {
-        return null;
+        int len = values.length;
+        return values[len/2];
     }
 
     public static String[] removeMiddleElement(String[] values) {
-        return null;
+        String[] newArray = new String[values.length - 1];
+        int count = 0;
+        for(String letter : values){
+            if(letter.equals(getMiddleElement(values))){
+                continue;
+            }
+            else{
+                newArray[count] = letter;
+                count++;
+            }
+        }
+        return newArray;
     }
 
     public static String getLastElement(String[] values) {
