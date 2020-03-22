@@ -23,7 +23,8 @@ public class ArrayUtils {
 
             }
 
-        }return result;
+        }
+        return result;
     }
 
     public static String getLastElement(String[] values) {
