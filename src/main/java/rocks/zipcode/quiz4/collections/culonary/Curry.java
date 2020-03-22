@@ -1,4 +1,6 @@
 package rocks.zipcode.quiz4.collections.culonary;
 
-public class Curry {
+import sun.security.provider.ConfigFile;
+
+public class Curry implements Spice {
 }
