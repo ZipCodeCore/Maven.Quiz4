@@ -6,54 +6,59 @@ package rocks.zipcode.quiz4.objectorientation.account;
 public class Employee implements Worker, Transactable{
 
     private BankAccount bankAccount;
-    private Double balance;
+    private Double hoursWorked;
+    private Double hourlyWage;
 
     public Employee() {
-        this.balance = 0.0;
+        bankAccount = new BankAccount();
+        this.hourlyWage = 35.0;
+        this.hoursWorked = 0.0;
     }
 
     public Employee(BankAccount bankAccount) {
         this.bankAccount = bankAccount;
+        this.hourlyWage = 35.0;
+        this.hoursWorked = 0.0;
     }
 
     public BankAccount getBankAccount() {
-        return this.bankAccount;
+        return bankAccount;
     }
 
     public void setBankAccount(BankAccount bankAccount) { this.bankAccount = bankAccount; }
 
     @Override
     public void deposit(Double amountToIncreaseBy) {
-
+        this.bankAccount.deposit(amountToIncreaseBy);
     }
 
     @Override
     public void withdrawal(Double amountToDecreaseBy) {
-
+        bankAccount.withdrawal(amountToDecreaseBy);
     }
 
     @Override
     public Double getBalance() {
-        return this.balance;
+        return bankAccount.getBalance();
     }
 
     @Override
     public void increaseHoursWorked(Double numberOfHours) {
-
+        this.hoursWorked += numberOfHours;
     }
 
     @Override
     public Double getHoursWorked() {
-        return null;
+        return this.hoursWorked;
     }
 
     @Override
     public Double getHourlyWage() {
-        return null;
+        return this.hourlyWage;
     }
 
     @Override
     public Double getMoneyEarned() {
-        return null;
+        return this.hoursWorked * this.hourlyWage;
     }
 }

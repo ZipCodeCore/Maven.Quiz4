@@ -1,6 +1,6 @@
 package rocks.zipcode.quiz4.fundamentals;
 
-import java.util.stream.Stream;
+import java.util.Arrays;
 
 /**
  * @author leon on 21/12/2018.
@@ -15,19 +15,11 @@ public class Calculator {
     }
 
     public static Double[] squareRoots(Double... value) {
-        Double[] result = (Double[]) Stream.of(value)
-                .map(root -> {
-                    double square = root * root;
-                    return square;
-                })
-                .toArray();
-        return result;
+        return Arrays.asList(value).stream().map(v -> squareRoot(v)).toArray(Double[]::new);
     }
 
     public static Double[] squares(Double... values) {
-        Double[] result = new Double[values.length];
-        Stream.of(result).forEach(Calculator::square);
-            return result;
+        return Arrays.asList(values).stream().map(v -> square(v)).toArray(Double[]::new);
     }
 
     public static Double add(Double value1, Double value2) {
