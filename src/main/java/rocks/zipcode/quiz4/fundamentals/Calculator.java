@@ -15,11 +15,11 @@ public class Calculator {
     }
 
     public static Double[] squareRoots(Double... value) {
-        return Arrays.asList(value).stream().map(v -> squareRoot(v)).toArray(Double[]::new);
+        return Arrays.stream(value).map(Calculator::squareRoot).toArray(Double[]::new);
     }
 
     public static Double[] squares(Double... values) {
-        return Arrays.asList(values).stream().map(v -> square(v)).toArray(Double[]::new);
+        return Arrays.stream(values).map(Calculator::square).toArray(Double[]::new);
     }
 
     public static Double add(Double value1, Double value2) { return value1 + value2; }
