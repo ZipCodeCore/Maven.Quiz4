@@ -11,13 +11,26 @@ public class BankAccount extends Account implements Transactable {
 
     @Override
     public void deposit(Double amountToIncreaseBy) {
-        this.balance += amountToIncreaseBy;
+        if(amountToIncreaseBy < 0){
+            throw new IllegalArgumentException("Deposit must be positive");
+        }
+        else {
+            this.balance += amountToIncreaseBy;
+        }
 
     }
 
     @Override
     public void withdrawal(Double amountToDecreaseBy) {
-        this.balance -= amountToDecreaseBy;
+        if(amountToDecreaseBy < 0){
+            throw new IllegalArgumentException("Withdrawal must be positive");
+        }
+        else if(amountToDecreaseBy > balance){
+            throw new IllegalArgumentException("Withdrawal amount is greater than balance");
+        }
+        else {
+            this.balance -= amountToDecreaseBy;
+        }
     }
 
     @Override
