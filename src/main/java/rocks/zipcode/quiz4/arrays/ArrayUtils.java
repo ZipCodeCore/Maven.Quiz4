@@ -1,6 +1,10 @@
 package rocks.zipcode.quiz4.arrays;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -23,6 +27,13 @@ public class ArrayUtils {
     }
 
     public static String[] removeLastElement(String[] values) {
-        return null;
+        AtomicInteger i = new AtomicInteger(0);
+        List<String> temp = new LinkedList<>();
+        Arrays.stream(values)
+                .forEach(x -> {
+                    if(i.getAndIncrement() != values.length-1)
+                        temp.add(x);
+                });
+        return temp.stream().toArray(String[]::new);
     }
 }
