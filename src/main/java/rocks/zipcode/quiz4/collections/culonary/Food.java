@@ -16,8 +16,9 @@ public class Food {
     }
 
     public <SpiceType extends Class<? extends Spice>> Map<SpiceType, Integer> getSpiceCount() {
-
-        return null;
+        Map<SpiceType, Integer> spiceMap = new HashMap<>();
+        spiceMap.put((SpiceType) spices.get(0).getClass(), spices.size());
+        return spiceMap;
     }
 
     public void applySpice(Spice spice) {
