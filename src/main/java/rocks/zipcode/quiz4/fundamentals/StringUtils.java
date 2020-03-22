@@ -5,8 +5,8 @@ package rocks.zipcode.quiz4.fundamentals;
  */
 public class StringUtils {
     public static Character getMiddleCharacter(String string) {
-        return null;
-    }
+        return string.charAt(string.length()/2);
+}
 
     public static String capitalizeMiddleCharacter(String str) {
         return null;

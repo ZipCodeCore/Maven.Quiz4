@@ -13,7 +13,17 @@ public class ArrayUtils {
     }
 
     public static String[] removeMiddleElement(String[] values) {
-        return null;
+        String[] result = new String[values.length - 1];
+        int middle = values.length / 2;
+        int index = 0;
+        for (int i = 0; i < values.length; i++) {
+            if (i != middle) {
+                result[index] = values[i];
+                index++;
+
+            }
+
+        }return result;
     }
 
     public static String getLastElement(String[] values) {
