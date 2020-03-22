@@ -11,23 +11,24 @@ public class StringUtils {
     }
 
     public static String capitalizeMiddleCharacter(String str) {
-        Integer middleIndex = str.length()/2;
-        return str.substring(0,middleIndex) +
-                str.substring(middleIndex, middleIndex+1).toUpperCase() +
-                str.substring(middleIndex+1);
+        Integer middle = str.length()/2;
+        return str.substring(0,middle) +
+                str.substring(middle, middle+1).toUpperCase() +
+                str.substring(middle+1);
     }
 
     public static String lowerCaseMiddleCharacter(String str) {
-        Integer middleIndex = str.length()/2;
-        return str.substring(0,middleIndex) +
-                str.substring(middleIndex, middleIndex+1).toLowerCase() +
-                str.substring(middleIndex+1);
+        Integer middle = str.length()/2;
+        return str.substring(0,middle) +
+                str.substring(middle, middle+1).toLowerCase() +
+                str.substring(middle+1);
     }
 
     public static Boolean isIsogram(String str) {
         for(int i = 0; i < str.length()-1; i++){
             for(int j = i+1; j < str.length(); j++){
-                if (str.charAt(i) == str.charAt(j)) return false;
+                if (str.charAt(i) == str.charAt(j))
+                    return false;
             }
         }
         return true;
@@ -35,7 +36,8 @@ public class StringUtils {
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
         for (int i = 0; i < str.length()-1; i++){
-            if (str.charAt(i) == str.charAt(i+1)) return true;
+            if (str.charAt(i) == str.charAt(i+1))
+                return true;
         }
         return false;
     }
