@@ -34,6 +34,6 @@ public class ArrayUtils {
                     if(i.getAndIncrement() != values.length-1)
                         temp.add(x);
                 });
-        return temp.stream().toArray(String[]::new);
+        return temp.toArray(new String[0]);
     }
 }

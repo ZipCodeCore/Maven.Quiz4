@@ -27,7 +27,6 @@ public class StringUtils {
     }
 
     public static String lowerCaseMiddleCharacter(String str) {
-//        return str.substring(0,str.length()/2) + getMiddleCharacter(str.toLowerCase()) + str.substring(str.length()/2 +1);
         StringBuilder retString = new StringBuilder();
         AtomicInteger i = new AtomicInteger(0);
         str.chars().mapToObj(x -> (char)x).forEach(x -> {
