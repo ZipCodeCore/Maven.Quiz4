@@ -20,8 +20,10 @@ public class GetAllSpicesTest {
         // given each spice is applied to food
         expected.forEach(food::applySpice);
 
+
         // when spice on food is evaluated
         List<Spice> actual = food.getAllSpices();
+
 
         // then
         Assert.assertEquals(expected, actual);
